@@ -27,6 +27,7 @@ TAs will hold office hours spread across the week
 
 ### TA Email Address:
 grp-fall21-cmput365-lec-a1@ualberta.ca
+(Do not presonally email the TAs. They will only respond via the grp-fall21-cmput365-lec-a1 email)
 
 ### Overview
 This course provides an introduction to reinforcement learning intelligence, which focuses on the study and design of agents that interact with a complex, uncertain world to achieve a goal. We will emphasize agents that can make near-optimal decisions in a timely manner with incomplete information and limited computational resources. The course will cover Markov decision processes, reinforcement learning, planning, and function approximation (online supervised learning). The course will take an information-processing approach to the concept of mind and briefly touch on perspectives from psychology, neuroscience, and philosophy.
@@ -61,7 +62,8 @@ For weekly practice quizzes and discussion questions, you get marked individuall
 There are 11 graded assignments. They are usually python notebooks, but sometimes it is a Graded Quiz or a Peer Review. The Graded Quizzes and Peer Review will be due on Thursday at mignight, and the notebooks (which are longer) are due on Friday at noon (12:00pm). You will get one assignment off, what that means is we will take the top 10 assigments out of your 11 assigment submission. Each graded assignment has equal weight (30/10). 
 
 * Assignments (graded on Coursera): 30%
-* Project: 5%
+* correctly signing up for the private session on Coursera: 1%
+* Project: 4%
 * Quiz: 5%
 * Participation: 10%
 * Midterm Exam: 20%
