@@ -19,6 +19,7 @@ ETLC E1-007
 
 ### Instruction Team:
 Adam White (amw8@ualberta.ca)<br>
+Andrew Patterson (ap3@ualberta.ca )<br>
 ...<br>
  
 ### Office Hours:
@@ -55,17 +56,20 @@ With a focus on AI as the design of agents learning from experience to predict a
 * Policy gradient methods
 
 ### Course Work and Evaluation
-The course work will come from the quizzes and assignments through the Coursera Platform. There will be one small programming assignment (notebook) or one multiple choice quiz due each week, through the Coursera Platform. There are also practice quizzes, that will be due before the start of each week for participation marks. Each week, you have to complete the quiz and submit a discussion question (using slido) by midnight on Sunday, for the topic that coming week. That means you have to have completed  the lectures and readings as well for that week. The course will also have a quiz, midterm exam, given in class, and a final exam at the end. 
+The course work will come from the quizzes and assignments through the Coursera Platform. There will be one small programming assignment (notebook) or one multiple choice quiz due each week, through the Coursera Platform. There are also practice quizzes, that will be due before the start of each week for participation marks. Each week, you have to complete the quiz by midnight on Sunday, for the topic that coming week. That means you have to have completed watching the lecture videos on Coursera and readings as well for that week. The course will also have two mini-essays (1/2 page writing assignments), a quiz, midterm exam, given in class, and a final exam at the end. 
 
-For weekly practice quizzes and discussion questions, you get marked individually for both the items each carrying a weight of 0.5% . There are a total of 12 weekly pratice quizzes, and you should do all of them. But, due to the fact that issues sometimes arise, we give you a couple of mulligans. You have to complete 10 of the 12 to get the full 10% participation mark. 
+For weekly practice quizzes, each one has a weight of 0.5% . There are a total of 12 weekly pratice quizzes, and you should do all of them. But, due to the fact that issues sometimes arise, we give you a couple of mulligans. You have to complete 10 of the 12 to get the full 5% participation mark. 
 
 There are 11 graded assignments. They are usually python notebooks, but sometimes it is a Graded Quiz or a Peer Review. The Graded Quizzes and Peer Review will be due on Thursday at mignight, and the notebooks (which are longer) are due on Friday at noon (12:00pm). You will get one assignment off, what that means is we will take the top 10 assigments out of your 11 assigment submission. Each graded assignment has equal weight (30/10). 
+
+The mini essays will be writing assignments. You will be given a list of 10 or so discussion topics (no other topics are allowed) and you will need to write 200 to 300 words discussing the topic. Writing is an important skill. You will be marked both on your clarity of thought (and content), as well as your grammar, spelling, sentence & paragraph structure, and overall polish. Each mini-essay will we worth 2.5% of your final grade.
 
 * Assignments (graded on Coursera): 30%
 * correctly signing up for the private session on Coursera: 1%
 * Project: 4%
 * Quiz: 5%
-* Participation: 10%
+* Mini essay (x2): %5
+* Participation: 5%
 * Midterm Exam: 20%
 * Final Exam: 30%
  
