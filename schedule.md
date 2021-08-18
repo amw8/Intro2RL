@@ -1,11 +1,11 @@
-<h3><a href="https://marthawhite.github.io/rlcourse/">Link back to the Syllabus</a></h3>
+<h3><a href="https://github.com/amw8/Intro2RL">Link back to the Syllabus</a></h3>
 
 <a href="http://incompleteideas.net/book/the-book-2nd.html">All readings are from the textbook.</a>
 These readings are designed to be short, so that it should be easy to keep up with the readings.
 
 This schedule is tentative, and is likely to change throughout the semester.
 
-<a href="https://marthawhite.github.io/rlcourse/schedule_2019.html">Link to Schedule from Fall 2019.</a>
+<a href="https://github.com/marthawhite/rlcourse/blob/master/schedule.md">Link to Schedule from Fall 2020.</a>
 
 
 Week | Date | Topic | Deadlines
