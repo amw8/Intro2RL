@@ -6,7 +6,7 @@
 
 ## Syllabus
 
-[Syllabus pdf](docs/syllabus.pdf)
+This page!!!
 
 ### Term: 
 Fall, 2010 
