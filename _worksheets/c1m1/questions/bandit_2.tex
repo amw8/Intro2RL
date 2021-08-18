@@ -1,0 +1,22 @@
+Consider a problem where an agent is trying to get to school and must choose how long to wait at the bus stop. The agent can walk to school, but wants to catch the bus if possible. At the same time, the agent doesn't want to wait too long because of delays. Unfortunately, the time it takes for a bus to arrive is effectively random.
+
+\begin{enumerate}[label=(\alph*)]
+  \item This is not a K-armed bandit problem because your action set, how long to wait, is not a positive integer. How could you reformulate the bus-waiting problem as a K-armed bandit?
+  \item In problems with continuous random variables, we rarely know the distribution of a variable. Instead, we often make assumptions on its distribution. One commonly assumed distribution for continuous random variables is the Gaussian (or Normal) distribution. Is the Gaussian assumption in this bus-waiting problem reasonable? Justify your answer using properties of the Gaussian distribution and other assumptions about the distribution of time spent waiting at the bus stop.
+\end{enumerate}
+
+%% \textbf{Answer:}
+%% \begin{enumerate}
+%% \item One way could be to fix a maximal waiting time and then discretize the waiting time into a finite number of intervals. For example, we could choose the maximal waiting time to be 60 minutes and discretize the waiting time to 0 minutes, 5 minutes, 10 minutes, $\ldots$ , 60 minutes to get a total of 13 actions.
+
+%%   An alternate could be to model the problem as continuous bandit.
+%% \item Yes, assuming a Gaussian distribution for the arrival time (assume that the agent waits until the bus arrives, so that the waiting time of the agent is equal to the arrival time of the bus) is reasonable:
+%%   \begin{enumerate}
+%%   \item The arrival time is continuous and Gaussian distribution is a continuous distribution as well.
+%%   \item The Gaussian distribution (because of Central Limit Theorem) is often a suitable modeling choice for processes that depend on a number of other probabilistic factors. For example, the arrival time here may depend on multiple factors such as the traffic situation in the city.
+%%   \item More intuitively, the arrival time of the bus would be close to the scheduled time, and the probability of the bus arriving too early or too late than this scheduled time should be low -- this is modeled by the tails in the Gaussian distribution.
+%%   \end{enumerate}
+
+%%   Although, in order to use a Gaussian distribution here, we'll have to restrict the range of the random variable to non--negative real numbers in Gaussian distribution. Another popular choice for modeling waiting times is the exponential distribution.
+%% \end{enumerate}
+  

@@ -1,0 +1,20 @@
+We say an estimator is unbiased if its expected value equals the true value of the parameter being estimated. For example, if we roll a die 10 times and denote the value of the ith roll to be $X_i$, then the sample mean (average roll) is an unbiased estimator of the true mean since
+
+\[
+    E\left[\frac{\sum_{i=1}^{10}{X_i}}{10}\right] = E[X].
+\]
+
+Where $E[X]$ is the expected value of a roll.
+
+Suppose you would like to estimate what the expected roll of a fair die is but you only have a loaded die with probability mass function $\Tilde{p}(x)$. Show that $Y = X \frac{1/6}{\Tilde{p}(X)}$ is an unbiased estimator of the mean for a roll with a fair die, where $X$ is the outcome of the loaded die.
+
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{IEEEeqnarray*}{lCl}
+%%   \E_{\text{loaded die}}\left[X \frac{1/6}{\Tilde{p}(x)}\right] &=& \sum_{x \in \{1, 2, 3, 4, 5, 6\}} \Tilde{p}(x) \cdot \Bigg(X \frac{1/6}{\Tilde{p}(x)}\Bigg) \\
+%%   &=& \sum_{x \in \{1, 2, 3, 4, 5, 6\}} X \cdot \frac{1}{6} \\
+%%   &=& \E_{\text{fair die}} \left[X\right].
+%% \end{IEEEeqnarray*}
+
+%% The ratio $\frac{1/6}{\Tilde{p}(x)}$ is known as the importance sampling ratio. We may discuss more about it later in the course, and its connection to Off--policy learning.

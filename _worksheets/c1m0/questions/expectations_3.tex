@@ -1,0 +1,18 @@
+Prove the tower property
+\[
+    E[X] = E\left[E[X|Y=y]\right].
+\]
+
+\textit{Hint}:\\
+$E[X|Y=y]$ is a random variable and can be thought of as a function of $y, g(y)$.
+
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{IEEEeqnarray*}{lCl}
+%%   \E[X] &=& \sum_{x} x \cdot \text{Pr}(x) \\
+%%   &=& \sum_{x} x \sum_y \text{Pr}(x | y) \cdot \text{Pr}(y) \\
+%%   &=& \sum_y \Bigg( \sum_x x \cdot\text{Pr}(x | y) \Bigg) \cdot \text{Pr}(y) \\
+%%   &=& \sum_y \E[X | Y=y] \cdot \text{Pr}(y) \\
+%%   &=& \E\left[\E[X|Y]\right]
+%% \end{IEEEeqnarray*}

@@ -1,0 +1,42 @@
+Consider the following neural network $\hat v$ with one-hidden layer, relu activation function $g$, with weights $\mathbf{W}^{[0]} \in \mathbb{R}^{n\times d}, \mathbf{W}^{[1]} \in \mathbb{R}^{n\times 1},\mathbf{b}^{[0]} \in \mathbb{R}^{n \times 1}, \mathbf{b}^{[1]} \in \mathbb{R}$, 
+%
+\begin{align*}
+\hat v(\mathbf{s}; \mathbf{w} = \{\mathbf{W}^{[0]}, \mathbf{W}^{[1]},\mathbf{b}^{[0]}, \mathbf{b}^{[1]}\}) 
+&= \mathbf{W}^{[1]}g(\mathbf{W}^{[0]} \mathbf{x} + \mathbf{b^{[0]}}) + \mathbf{b}^{[1]}\\
+&= \mathbf{W}^{[1]}g(\boldsymbol{\psi}) + \mathbf{b}^{[1]}\\
+&= \sum_{i=1}^n \mathbf{W}^{[1]}_i g(\boldsymbol{\psi}_i) + \mathbf{b}^{[1]}
+\end{align*}
+%
+for $\boldsymbol{\psi} = \mathbf{W}^{[0]} \mathbf{s} + \mathbf{b^{[0]}} \in \mathbb{R}^n$. 
+Recall that we get the following gradients 
+\begin{align*}
+	&\frac{\partial \hat{v}(\mathbf{s}, \mathbf{w})}{\partial \mathbf{W}_{i}^{[1]}} = g(\boldsymbol{\psi}_i) \\
+	&\frac{\partial \hat{v}(\mathbf{s}, \mathbf{w})}{\partial \mathbf{b}^{[1]}} =1\\
+	&\frac{\partial \hat{v}(\mathbf{s}, \mathbf{w})}{\partial \mathbf{b}_i^{[0]}} =
+	\mathbf{W}_{i}^{[1]}
+	\frac{\partial g(\boldsymbol{\psi}_i)}{\partial \mathbf{b}^{[0]}_i}   \\
+	&\frac{\partial \hat{v}(\mathbf{s}, \mathbf{w})}{\partial \mathbf{W}_{ij}^{[0]}} = 
+	\sum_k \mathbf{W}_{k}^{[1]}
+	\frac{\partial g(\boldsymbol{\psi}_k)}{\partial \mathbf{W}_{ij}^{[0]}}\\
+\end{align*}
+% Answer
+%\begin{align*}
+%	&\frac{\partial \hat{v}}{\partial  \mathbf{W}^{[0]}} = \mathbf{x}^\top( \mathbf{W}^{[1]}^\top 
+%	\odot I_{\max
+%	\{0, \mathbf{x} \mathbf{W}^{[0]} +  \mathbf{b}^{[0]}\}}) 
+%	\\
+%	&\frac{\partial \hat{v}}{\partial  \mathbf{b}^{[0]}} =  \mathbf{W}^{[1]}^\top \odot I_{\max
+%        \{0, \mathbf{x} \mathbf{W}^{[0]} +  \mathbf{b}^{[0]}\}}\\
+%	&\frac{\partial \hat{v}}{\partial  \mathbf{W}^{[1]}} = \max
+%        \{0, \mathbf{x} \mathbf{W}^{[0]} +  \mathbf{b}^{[0]}\}^\top \\
+%	&\frac{\partial \hat{v}}{\partial  \mathbf{b}^{[1]}} = 1
+%\end{align*}	
+\begin{enumerate}
+  \item   What are the derivatives specifically for the relu activation $g(\boldsymbol{\psi}_i) = \max(0, \psi_i)$?
+  \item We talked about carefully initializing the weights for the NN. For example, each weight can be sampled from a Gaussian distribution. Imagine instead you decided to initialize all the weights to zero. Why would this be a problem? Hint: Consider the derivatives in (a). 
+
+    %How about if features are binary, and on average 4 features are activated at any given state, and weights are randomly initialized from the uniform distribution $U(0,1)$?
+  %\item Note that learning algorithms take the derivative with respect to the weights and biases, and not the data $\mathbf{x}$ as we usually do in calculus class.
+  %  This is because we want to optimize the weights and biases given data that we experience.
+  %  Nevertheless, how might you explain the meaning of $\frac{\partial \mathcal{E}}{ \partial \mathbf{x}}$?
+ \end{enumerate}

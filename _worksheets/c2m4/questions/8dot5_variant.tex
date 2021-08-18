@@ -1,0 +1,26 @@
+Consider an MDP with two states $\{1,2\}$ and two possible actions: $\{\text{stay}, \text{switch}\}$.
+The state transitions are deterministic, the state does not change if the action is ``stay'' and the state switches if the action is ``switch''.
+However, rewards are randomly distributed:
+\begin{align*}
+  P(R\, | S = 1, A = \text{stay}) &= \begin{cases}
+  0 & \text{w.p. 0.4}\\
+  1 & \text{w.p. 0.6}
+  \end{cases} , \,\,\,
+P(R\, | S = 1, A = \text{switch}) = \begin{cases}
+  0 & \text{w.p. 0.5}\\
+  1 & \text{w.p. 0.5}
+\end{cases}\\
+ P(R \,| S = 2, A = \text{stay}) &= \begin{cases}
+  0 & \text{w.p. 0.6}\\
+  1 & \text{w.p. 0.4}
+  \end{cases} , \,\,\,
+P(R \,| S = 2, A = \text{switch}) = \begin{cases}
+  0 & \text{w.p. 0.5}\\
+  1 & \text{w.p. 0.5}
+\end{cases}
+\end{align*}
+\begin{enumerate}
+  \item  How might you learn the reward model? Hint: think about how probabilities are estimated. For example, what if you were to estimate the probability of a coin landing on heads? If you observed 10 coin flips with 8 heads and 2 tails, then you can estimate the probabilities by counting: $p(\text{heads}) = \frac{8}{10} = 0.8$ and $p(\text{tails}) = \frac{2}{10} = 0.2$.
+  \item Modify the tabular Dyna-Q algorithm to handle this MDP with stochastic rewards.
+\end{enumerate}
+

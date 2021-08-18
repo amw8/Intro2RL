@@ -1,0 +1,14 @@
+(\textit{Exercise 5.5 S\&B}) Consider an MDP with a single nonterminal state $s$ and
+a single action that transitions back to $s$ with 
+probability $p$ and transitions to the terminal state with probability $1-p$.
+Let the rewards be $+1$ on all transitions, and let $\gamma=1$. Suppose
+you observe one episode that lasts 10 steps, with return of 10. What
+is the (every-visit) Monte-carlo estimator of the value of the nonterminal state $s$?
+\begin{figure}[h!]
+  \center
+\includegraphics[width=0.8\linewidth]{figures/c2_mc_everyvisit.pdf}
+\end{figure}
+
+%%%%%%ANSWERS%%%%%%%5
+% first-visit : 10
+% every-visit : 10 + 9 + 8 + ... + 1 = (10)(11)/2 = 55

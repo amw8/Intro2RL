@@ -1,0 +1,38 @@
+(\textbf{Challenge Question})
+In this question we consider the variance of the TD target, $R_{t+1} + \gamma V(S_{t+1})$ compared to the variance of the Monte Carlo target, $G_t$. Let's assume an idealized setting, where we have found a $V$ that exactly equals $v_\pi$ and where $R_{t+1} = r(S_{t+1})$ depends only on the state you transition to. We can show that, in this case, the variance of the Monte Carlo target is greater than or equal to the variance of the TD target. Note that variance of the targets is a factor in learning speed, where lower variance targets typically allow for faster learning. 
+
+Show that  the Monte Carlo target has at least as high of variance as the TD target, using the following decomposition, called the Law of Total Variance
+%
+\begin{align*}
+\text{Var}(G_t) = \mathbb{E}[\text{Var}(G_t | S_{t+1})] + \text{Var}(\mathbb{E}[G_t | S_{t+1}])  
+.
+\end{align*} 
+%
+Note that the above means the variance of the return given state $S_t = s$: $\text{Var}(G_t | S_t = s)$. We omit the given $S_t = s$ from the above, to make it more readable, but implicitly it is there. Further, to better understand the double expectations, 
+%
+\begin{align*}
+\mathbb{E}[G_t] = \mathbb{E}[\mathbb{E}[G_t | S_{t+1}]] = \sum _{s' \in \mathcal{S}} p(s' | S_t = s) \mathbb{E}[G_t | S_{t+1}]
+.
+\end{align*} 
+%
+The outer expectation is over $S_{t+1}$, with the inner expectation computed given $S_{t+1}$. Similarly, 
+%
+\begin{align*}
+\mathbb{E}[\text{Var}(G_t | S_{t+1})]  = \mathbb{E}[\mathbb{E}[G_t | S_{t+1}]] = \sum _{s' \in \mathcal{S}} p(s' | S_t = s) \text{Var}[G_t | S_{t+1}]
+.
+\end{align*} 
+% 
+To answer the above question, try to simplify $\text{Var}(\mathbb{E}[G_t | S_{t+1}])$ by showing that $\mathbb{E}[G_t | S_{t+1}] = R_{t+1} + \gamma V(S_{t+1})$. Notice that this is only true because $V(S_{t+1}) = v_\pi(S_{t+1})$.
+Then conclude that this implies  
+%
+\begin{align*}
+\text{Var}(G_t) \ge \text{Var}(R_{t+1} + \gamma V(S_{t+1}))  
+.
+\end{align*} 
+%
+%%
+%\begin{align*}
+%\text{Var}(G_t | S_t = s) = \mathbb{E}[\text{Var}(G_t | S_t = s, S_{t+1})] + \text{Var}(\mathbb{E}[G_t | S_t = s, S_{t+1}] | S_t = s)  
+%.
+%\end{align*} 
+%%

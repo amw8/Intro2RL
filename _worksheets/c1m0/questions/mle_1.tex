@@ -1,0 +1,16 @@
+Given $\{y_1,y_2,\dotso,y_{n-1}, y_n\}$ and $f(y)=(\theta+1)y^{\theta}, 0 < y < 1.$, find the MLE for $\theta$.
+
+\smallspace
+
+%% \textbf{Answer:}
+%% The Maximum Likelihood Solution is defined by
+%% \begin{equation*}
+%%   \theta_{MLE} := \arg\max_\theta \ln\Big(\prod_{i=1}^n f(y_i) \Big) = \arg\max_\theta \sum_{i=1}^n \ln\big( (\theta+1) y_i^\theta \big).
+%% \end{equation*}
+
+%% We solve this by taking the derivative of the term following arg max with respect to $\theta$ and setting it to zero.
+%% \begin{IEEEeqnarray*}{lrCl}
+%%   & \frac{\partial}{\partial \theta} \sum_{i=1}^n \ln\big( (\theta+1) y_i^\theta \big) &=&  \sum_{i=1}^n \frac{\partial}{\partial \theta} \Bigg[\ln(\theta+1) + \theta \ln y_i \Bigg] = \sum_{i=1}^n \Bigg[\frac{1}{\theta + 1} + \ln y_i \Bigg] = 0 \\
+%%   \text{or} \quad & \frac{n}{\theta+1} &=& - \sum_{i=1}^n \ln y_i \\
+%%   \text{or} \quad & \theta_{MLE} &=& -\frac{n}{\sum_{i=1}^n \ln y_i} - 1. \\
+%% \end{IEEEeqnarray*}

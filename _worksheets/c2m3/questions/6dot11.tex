@@ -1,0 +1,6 @@
+(\textit{Exercise 6.11 S\&B})
+ Why is Q-learning considered an off-policy control method?
+ Why is Sarsa considered on-policy, but Expected Sarsa can be used off-policy?
+
+%% \textbf{Answer:}
+%% Q--learning learns the state--action value function for the optimal (greedy) policy while its trajectory is generated under the exploratory policy (such as the $\epsilon$--greedy policy). We can see this from the Q learning update equation which differs from the SARSA update equation, by including a max operator over the next state action Q values instead of using $Q(S', A')$ sampled from the exploratory policy. As a result, the action values are learned for the greedy policy.

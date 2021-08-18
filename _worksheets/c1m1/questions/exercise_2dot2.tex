@@ -1,0 +1,18 @@
+
+ (Exercise 2.2 from S\&B 2nd edition) Consider a $k$-armed bandit problem with $k = 4$ actions,
+denoted 1, 2, 3, and 4. Consider applying to this problem a bandit algorithm using
+$\epsilon$-greedy action selection, sample-average action-value estimates, and initial estimates
+of $Q_1(a) = 0$, for all $a$. Suppose the initial sequence of actions and rewards is $A_1 = 1,
+R_1 = -1, A_2 = 2, R_2 = 1, A_3 = 2, R_3 = -2, A_4 = 2, R_4 = 2, A_5 = 3, R_5 = 0.$ On some
+of these time steps the $\epsilon$ case may have occurred, causing an action to be selected at
+random. On which time steps did this definitely occur? On which time steps could this
+possibly have occurred?
+\smallspace
+%Answer: 
+%The $\epsilon$ case definitely came up on steps 4 and 5, and could have come up on any of the steps. To see this clearly, make a table with the estimates, the set of greedy of actions, and the data at each step:
+%\begin{figure}
+%\center
+%\includegraphics[width=0.9\linewidth]{figures/bandit_table}
+%\end{figure}
+%\smallspace
+%The single estimate that changed on each step is bolded. If the action taken is not in the greedy set, as on time steps 4 and 5, then the $\epsilon$ case must have come up. On steps 1–3, the greedy action was taken, but still it is possible that the $\epsilon$ case come up and the greedy action was taken at random. Thus, the answer to the second question is all the time steps.

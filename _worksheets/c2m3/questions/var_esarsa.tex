@@ -1,0 +1,16 @@
+In this question we compare the variance of the target for Sarsa and Expected Sarsa. Recall the update for Sarsa is 
+$$ Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha \left[  R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_{t}, A_{t})\right]$$
+and for Expected Sarsa is
+$$ Q(S_{t}, A_{t}) \leftarrow Q(S_{t}, A_{t}) + \alpha \left[  R_{t+1} + \gamma \sum_{a' \in \mathcal{A}} \pi(a' | S_{t+1}) Q(S_{t+1}, a')  - Q(S_{t}, A_{t})\right].$$
+\begin{enumerate}
+\item Start by comparing the part of the update that is different: $Q(S_{t+1}, A_{t+1})$ compared to $\sum_{a' \in \mathcal{A}} \pi(a' | S_{t+1}) Q(S_{t+1}, a') $. Write down the variance for these two terms, given $S_{t+1} = s'$.
+%
+\begin{equation*}
+\text{Var}(Q(s', A_{t+1})) \hspace{0.5cm} \text{ and }  \hspace{0.5cm}
+\text{Var}\left(\sum_{a' \in \mathcal{A}} \pi(a' | s')Q(s', a')\right)
+\end{equation*}
+%
+Conclude that the variance is zero for Expected Sarsa, but likely non-zero for Sarsa. Notice that the only random variable is $A_{t+1}$, which is the action selected according to the target policy $\pi$ with distribution $\pi(\cdot | S_{t+1})$. 
+\item \textbf{Challenge Question:} Show that the variance of the Sarsa target is always greater than or equal to the variance of the Expected Sarsa target, given $S_t = s$ and $A_t = a$. Hint: use the Law of Total Variance, which states that for any two random variables $X$ and $Y$, $\text{Var}(Y) = \mathbb{E}[\text{Var}(Y|X)] + \text{Var}(\mathbb{E}[Y|X])$. This law also applies to conditional distributions: for any random variables $X, Y$ and $Z$, $\text{Var}(Y | Z) = \mathbb{E}[\text{Var}(Y|X,Z) | Z] + \text{Var}(\mathbb{E}[Y|X, Z] | Z).$
+\end{enumerate}
+

@@ -1,0 +1,37 @@
+Compute the Jacobian matrix of $f$ with respect to (x,y,z), 
+    \[
+        f(x,y,z) = 
+        \begin{bmatrix}
+            f_{1}(x,y,z) \\
+            f_{2}(x,y,z) \\
+            f_{3}(x,y,z)
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            xyz \\
+            y^2 \\
+            x+z
+        \end{bmatrix}.
+    \]
+
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{equation*}
+%%   {\bf J} =
+%%   \begin{bmatrix}
+%%     \frac{\partial f_1(x,y,z)}{\partial x} &
+%%     \frac{\partial f_1(x,y,z)}{\partial y} &
+%%     \frac{\partial f_1(x,y,z)}{\partial z} & \\
+%%     \frac{\partial f_2(x,y,z)}{\partial x} &
+%%     \frac{\partial f_2(x,y,z)}{\partial y} &
+%%     \frac{\partial f_2(x,y,z)}{\partial z} & \\
+%%     \frac{\partial f_3(x,y,z)}{\partial x} &
+%%     \frac{\partial f_3(x,y,z)}{\partial y} &
+%%     \frac{\partial f_3(x,y,z)}{\partial z}
+%%   \end{bmatrix}
+%%   =
+%%   \begin{bmatrix}
+%%     yz & xz & xy \\ 0 & 2y & 0 \\ 1 & 0 & 1
+%%   \end{bmatrix}
+%% \end{equation*}

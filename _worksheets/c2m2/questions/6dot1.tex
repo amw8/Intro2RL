@@ -1,0 +1,21 @@
+(\textit{Exercise 6.1 S\&B})
+If $V$ changes during the episode, then
+$$G_{t} - V(S_{t}) = \sum_{k=t}^{T-1}\gamma^{{k-1}}\delta_{k} $$
+only holds approximately; what would the difference be between the two sides? Let $V_{t}$ denote the array of state values used at time $t$ in the TD error and in the TD update.
+Redo the derivation to determine the additional amount that must be added to the sum of TD errors in order to equal the Monte Carlo error.
+
+%% \textbf{Answer:}
+%% With the given notation, $\delta_t = R_{t+1} + \gamma V_t(S_{t+1}) - V_t(S_t)$. The required derivation is as follows:
+%% \begin{IEEEeqnarray*}{lCl}
+%%   G_t - V_t(S_t) &=& R_{t+1} + \gamma G_{t+1} - V_t(S_t) + \gamma V_t(S_{t+1}) - \gamma V_t(S_{t+1}) \\
+%%   &=& \delta_t + \gamma (G_{t+1} - V_t(S_{t+1})) \\
+%%   &=& \delta_t + \gamma (G_{t+1} - V_{t+1}(S_{t+1})) + \gamma (V_{t+1}(S_{t+1}) - V_t(S_{t+1})) \\
+%%   &=& \delta_t + \gamma \big[\delta_{t+1} + \gamma (G_{t+2} - V_{t+2}(S_{t+2})) + \gamma (V_{t+2}(S_{t+2}) - V_{t+1}(S_{t+2})) \big] + \gamma (V_{t+1}(S_{t+1}) - V_t(S_{t+1})) \\
+%%   &=& \delta_t + \gamma \delta_{t+1} + \gamma^2 (G_{t+2} - V_{t+2}(S_{t+2})) + \gamma^2 (V_{t+2}(S_{t+2}) - V_{t+1}(S_{t+2})) + \gamma (V_{t+1}(S_{t+1}) - V_t(S_{t+1})) \\
+%%   &\vdots& \\
+%%   &=& \delta_t + \gamma \delta_{t+1} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} (G_t - V_T(S_T)) \\
+%%   && \quad \quad + \gamma^{T-t} (V_T(S_T) - V_{T-1}(S_T)) + \cdots + \gamma (V_{t+1}(S_{t+1}) - V_t(S_{t+1})) \\
+%%   &=& \sum_{k=t}^{T-1} \gamma^{k-t} \delta_k + \gamma \sum_{k=t}^{T-1} \gamma^{k-t} (V_{k+1}(S_{k+1}) - V_k(S_{k+1})).
+%% \end{IEEEeqnarray*}
+
+%% If the learning rate is small, then $V_{k+1}(S_{k+1}) \approx V_k(S_{k+1})$, and the equality given in the question would hold.

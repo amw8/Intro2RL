@@ -1,0 +1,26 @@
+(\textit{Exercise 6.7 S\&B}) Design an off-policy version of the TD(0) update that can be used with arbitrary target policy $\pi$ and covering behavior policy $b$, using at each step $t$ the importance sampling ratio $\rho_{t:t}$ (5.3).
+
+%% \textbf{Answer:}
+%% In this question, we only update the target $(R + \gamma V(S'))$ of the TD--update. We'll ignore the stationary state distribution. This setting is also called the excursion setting. We begin by writing the Bellman equation and then modifying it to obtain the off--policy TD update.
+%% \begin{IEEEeqnarray*}{lCl}
+%%   V_\pi(s) &=& \sum_a \pi(a|s) \sum_{s', r} p(s', r|s, a) [r + \gamma V_\pi(s')] \\
+%%   &\equiv& \E_{\pi, P} [R_{t+1} + \gamma V(S_{t+1}) | S_t = s] \\
+%%   &=& \sum_a b(a|s) \underbrace{\frac{\pi(a|s)}{b(a|s)}}_{\rho_{t:t}} \sum_{s', r} p(s', r|s, a) [r + \gamma V_\pi(s')] \\
+%%   &\equiv& \E_{b, P} [\rho_{t:t} (R_{t+1} + \gamma V(S_{t+1})) | S_t = s].
+%% \end{IEEEeqnarray*}
+
+%% The last line leads to the following off--policy TD update:
+%% \begin{equation} \label{eq: td_one}
+%%   V(S_t) = V(S_t) + \alpha [\rho_{t:t} (R_{t+1} + \gamma V(S_{t+1})) - V(S_t)].
+%% \end{equation}
+
+%% There is an alternate algorithm as well. We write $\E_{\pi, P} [\delta_t | S_t = s] \equiv \E_{\pi, P} [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)] = \E_{\pi, P} [\rho_{t:t} \delta_t | S_t = s]$. This leads to the following alternate TD algorithm:
+%% \begin{equation} \label{eq: td_two}
+%%   V(S_t) = V(S_t) + \alpha \rho_{t:t} [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)].
+%% \end{equation}
+
+%% Note that the expected update, under the behavior policy, in both Eq. \ref{eq: td_one} and \ref{eq: td_two} is same:
+%% \begin{equation*}
+%%   \E_{b, P} [\rho_{t:t} (R_{t+1} + \gamma V(S_{t+1})) - V(S_t) | S_t] = \E_{b, P} [\rho_{t:t}(R_{t+1} + \gamma V(S_{t+1}) - V(S_t)) | S_t].
+%% \end{equation*}
+%% It is straightforward to see this by using the linearity of the expectation operator and the fact that $\E_{b, p}[\rho_t | S_t] = \sum_a b(a|s) \frac{\pi(a|s)}{b(a|s)} = 1$.

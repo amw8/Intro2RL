@@ -1,0 +1,35 @@
+Consider the following general SGD update rule with a general target $U_t$
+\[
+	\mathbf{w}_{t+1} = \mathbf{w}_t + \alpha \left[U_t - \hat{v}(S_t,\mathbf{w}_t)\right] \nabla \hat{v}(S_t, \mathbf{w_t}).
+\]
+%In the tabular case if we wanted our estimates to approach the mean of its
+%past targets after $\tau$ experiences then we would set $\alpha = \frac{1}{\tau}$.
+%In function approximation, setting a stepsize in a similar fashion is difficult
+%because experiences from some states can change our estimate in others.
+%However, if using linear function approximation where
+%$\hat{v}(S_t,\mathbf{w}) = \mathbf{x}(S_t)^T\mathbf{w}$, then by setting
+%\[
+%	\alpha = \frac{1}{\tau\mathbb{E}[\mathbf{x}(S_t)^\top\mathbf{x}(S_t)]}
+%\]	
+%we can learn in about $\tau$ experiences with the same feature vector.
+%Using the above rule of thumb, how would you set $\alpha$ if you used
+%tile coding with 10 tilings?
+Assume we are using linear function approximation, \emph{i.e. }
+$\hat{v}(S, \mathbf{w})= x(S)^\top \mathbf{w}$.
+\begin{enumerate}
+	\item What happens to the update if we scale the features by a constant
+		and use the new features $\tilde{x}(S) = 2x(S)$?
+		 Why might this be a problem?
+	\item In general we want a stepsize that is invariant to the magnitude
+		of the feature vector $x(S)$, where the magnitude is measured by
+		the inner product $x(S)^\top x(S)$.
+		The book suggests the following 
+		stepsize:
+		\[
+			\alpha = \frac{1}{\tau x(S)^\top x(S)}.
+		\]
+		What is $x(S)^\top x(S)$ when using tile coding with 
+		10 tilings?
+		Suppose $\tau = 1000$, what is $\alpha$ if we use tile coding
+		with 10 tilings?
+\end{enumerate}	

@@ -1,0 +1,23 @@
+Consider a random walk with three states $\mathcal{S} = \{1,2,3 \}$ and a discount rate $\gamma = 0.9$.
+Suppose the weight of $\hat v(s;\mathbf{w}) = \hat v(s;w) = w\cdot s$ is initialized to 0 and you observed the
+following episode:
+
+\[
+    S_0 = 1, R_1 = -7, S_1 = 3,  R_2 = 5, S_2 = 1, R_3 = 10.
+\]
+
+Then if $S_{3}$ is the terminal state and $\alpha = 0.1$, what is
+\begin{enumerate}
+    \item the gradient Monte-Carlo estimate for $\hat v(1 ; w)$?
+    \item the semi-gradient Linear TD estimate for $\hat v(1 ; w)$?
+    \item the estimate for both gradient Monte-Carlo and semi-gradient Linear TD of $\hat v(1 ; w)$ after seeing the same episode again?
+\end{enumerate}
+
+% G_1 = 8, G_3 = 10
+% a) w = 0.1*[8 - 0]*1 = 0.8
+% ...w += 0.1[10 - 0.8]*1 = 0.8 + 0.92 = 1.72
+%
+% b) w = 0.1*[-7 + 0 - 0]*1 = -0.7
+% ...w += 0.1*[10 - (-0.7)*1] = -0.7 + 1.07 = 0.37
+%
+% c)

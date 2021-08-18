@@ -1,0 +1,30 @@
+Consider the above MDP where the agent plays the same bandit problem
+twice and the action values are switched if the agent
+selects action 1 at time 1.
+Suppose we now have a discount factor $\gamma = 0.5$,
+and the agent select a policy $\pi$ that is the same for
+both time steps. What is the optimal policy?
+Now suppose that the agent can play a different policy at
+each time step, what would be the optimal policy?
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{itemize}
+%% \item \textbf{Part 1:} Continuing from the previous answer, we have $p_1=p_2=p_3=p$ and $\gamma=0.5$. Now we need to find $p$ such that $v_\pi(s_1)$ is maximized. We have
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     v_\pi(s_1) &=& 10 p_1 +\gamma p_1 (10-5p_2) + 5 (1-p_1) + \gamma (1-p_1) (3+7p_3) \\
+%%     &=& 10 p + 0.5 p (10-5p) + 5 (1-p) + 0.5 (1-p) (3+7p) \\
+%%     &=& -6p^2 + 12p +6.5.
+%%   \end{IEEEeqnarray*}
+
+%%   This expression attains the maximum value of 12.5 at $p=1$. Therefore, the optimal policy in this case would be to take $a_1$ at each state with probability 1.
+
+%% \item \textbf{Part 2:} Continuing from answer to the previous question, we get the maximum value of $v_\pi(s_2) = 10$ and $v_\pi(s_3) = 10$ for $p_2=0$ and $p_3=1$. Putting these into the expression for $v_\pi(s_1)$ we get:
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     v_\pi(s_1) &=& 10 p_1 +\gamma p_1 (10-5p_2) + 5 (1-p_1) + \gamma (1-p_1) (3+7p_3) \\
+%%     &=& 10 p_1 + 0.5 p_1 \times 10 + 5 (1-p_1) +0.5 (1-p_1) \times 10 \\
+%%     &=& 10 + 5p_1.
+%%   \end{IEEEeqnarray*}
+
+%%   This expression attains a maximal value of $v_\pi(s_1) = 15$ for $p_1=1$. Therefore, the optimal policy is to take action $a_1$ in state $s_1$, action $a_2$ in state $s_2$, and action $a_1$ in state $s_3$.
+%% \end{itemize}

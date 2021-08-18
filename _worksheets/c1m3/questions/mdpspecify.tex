@@ -1,0 +1,14 @@
+In this question, you will take a word specification of an MDP, and write the formal terms and determine the optimal policy. Suppose you have a problem with two actions. The agent always starts in the same state, $s_0$. From this state, if it takes action 1 it transitions to a new state $s_1$ and receives reward $10$; if it takes action 2 it transitions to a new state $s_2$ and receives reward $5$. From $s_1$ if it takes action 1 it receives a reward of $5$ and terminates; if it takes action 2 it receives a reward of $10$ and terminates. From $s_2$ if it takes action 1 it receives a reward of $10$ and terminates; if it takes action 2 it receives a reward of $5$ and terminates. Assume the agent cares equally about long term reward as about immediate reward.
+\begin{enumerate}
+\item Draw the MDP for this problem. Is it an episodic or continuing problem? What is $\gamma$? %episodic, gamma = 1.0
+\item Assume the policy is $\pi(a = 1|s_i) = 0.3$ for all $s_i \in \{s_0, s_1, s_2\}$. %\pi(a = 2 | s_i) = 0.7
+What is $\pi(a = 2 | s_i)$? And what is the value function for this policy?  In other words, find $v_{\pi}(s)$
+for all three states. %
+\item What is the optimal policy in this environment?
+\end{enumerate}
+\bigspace
+
+%%ANSWERS%%%%
+%1) episodic, gamma = 1
+%2) v(S1) = 8.5, v(S2) = 6.5, v(S0)=13.6
+%3) pi(a=1|s0) = 1, pi(a=2|s1) =1, pi(a=1|s2)=1 

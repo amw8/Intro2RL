@@ -1,0 +1,21 @@
+Assume we are given a fixed policy $\pi$. Recall that the mean-squared value error is $$\overline{\text{VE}}(\mathbf{w}) = \sum_{s \in \mathcal{S}} \mu(s) (v_\pi(s) - \hat{v}(s, \mathbf{w}))^2.$$ 
+Recall that we can use TD with linear function approximation to learn parameters $\mathbf{w}$:
+$${\bf w}\gets {\bf w} + \alpha[R_{t+1} + \gamma {\bf w}^\top{\bf x}(S_{t+1}) - {\bf w}^\top{\bf x}(S_{t})]{\bf x}(S_{t}).$$
+When linear TD converges, it converges to what we call the TD fixed-point. Let's denote the weight vector found by linear TD at convergence as $\mathbf{w}_{\text{TD}}$. We denote the estimated value as \(\hat{v}(s, \mathbf{w}_{\text{TD}}) = \mathbf{w}_{\text{TD}}^\top \mathbf{x}(s)$.
+At the TD fixed point, we know that the VE is within a bounded expansion of the lowest possible error:
+$$\overline{\text{VE}}(\mathbf{w}_{\text{TD}}) \leq \frac{1}{1-\gamma}\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w})$$
+\begin{enumerate}
+\item Recall that $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w})$ is the minimal value error you can achieve under this value function parameterization. If we have a tabular parameterization, then what might $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w})$ be? What if the parameterization is a state aggregation?
+  \item If $\gamma = 0.9$ and $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w}) = 0$, then what is the minimum and maximum value of $\overline{\text{VE}}(\mathbf{w}_{\text{TD}})$?
+  \item If $\gamma = 0.9$ and $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w}) = 1$, then what is the minimum and maximum value of $\overline{\text{VE}}(\mathbf{w}_{\text{TD}})$?
+    \item If $\gamma = 0.99$ and $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w}) = 1$, then what is the minimum and maximum value of $\overline{\text{VE}}(\mathbf{w}_{\text{TD}})$?
+  \item We have seen that if we can perfectly represent the value function, then $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w}) = 0$.
+    How about the other direction: if  $\min_{\mathbf{w}}
+    \overline{\text{VE}}(\mathbf{w}) = 0$, then does that mean we can represent true value function?
+\item \textbf{Challenge Question:} Imagine instead we obtained the asymptotic solution under the Monte carlo update; let us call this $\mathbf{w}_{\text{MC}}$. This is the solution we would obtain after updating with many many pairs of states and sampled returns, with $s$ sampled proportionally to $\mu$. How is $\overline{\text{VE}}(\mathbf{w}_{\text{MC}})$ and $\min_{\mathbf{w}} \overline{\text{VE}}(\mathbf{w})$ related? Hint: Try to write down the objective for Monte carlo and reason about the solution to this objective. 
+\end{enumerate}
+
+
+% a) 1 < VE(W_td) < 10. If min_w VE(w) = 0, then 0 < VE(W_td) < 0.
+%
+% b)

@@ -1,0 +1,25 @@
+
+In Policy Iteration, we used dynamic programming for the policy evaluation step, to compute $v_\pi$. 
+Monte Carlo ES is a Generalized Policy Iteration (GPI) algorithm, that does not do a full policy evaluation step, before greedifying. How might you modify Monte Carlo ES, to do (more) complete policy evaluation steps before greedifying?
+
+%% Old version, delete after November, 1, 2019
+%
+%Similar to dynamic programming, Monte Carlo estimates can be used
+%for policy iteration. Although policy iteration can be used to 
+%compute optimal policies, policy evaluation steps are only accurate 
+%asymptotically for both dynamic programming and Monte Carlo methods.
+%Generalized Policy Improvement (GPI), generalizes policy iteration without
+%requiring exact policy evaluation steps. Explain what changes you would 
+%make to value iteration (a dynamic programming GPI method) and 
+%Monte Carlo with exploring starts to perform exact policy evaluation steps.
+%
+%%%%%%%ANSWERS%%%%%%5
+%% MC ES:
+%% Loop policy evaluation forever or until you know that the greedy policy will
+%% never change. 
+%% Remove previous estimates before every evaluation step
+%% (not required if looping forever but will not change the process)
+%
+%% Value iteration
+%% In policy evaluation step, apply the bellman equation over and over until
+%% convergence as opposed to one pass over the state space.

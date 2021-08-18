@@ -1,0 +1,25 @@
+Now suppose a game where you choose to flip one of two (possibly unfair) coins. You win $\$1$ if your chosen coin shows heads and lose $\$1$ if it shows tails.
+Note that you do not know the probability of the coin outcomes. Instead, you are able to view 6 sample flips for each coin respectively: (T,H,H,T,T,T) and (H,T,H,H,H,T).
+
+\begin{enumerate}[label=(\alph*)]
+    \item For each coin: what is the MLE estimate for the probability of heads $p$? Construct a confidence interval for $p$.
+    \item Which coin would you flip? Would you be willing to flip a coin other than the one you chose?
+\end{enumerate}
+
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{enumerate}
+%% \item Represent $T$ by 0 and $H$ by a 1. Then the MLE estimate of the probability of getting a heads is just the mean of the input data. If $p_1$ and $p_2$ denote the probability of heads for coin 1 and coin 2 respectively, then $p_1 = \frac{2}{6} = 0.33$ and $p_2 = \frac{4}{6} = 0.67$.
+
+%%   To compute the confidence intervals, we will first need to compute the sample standard error (standard deviation over the square root of sample size) $\sigma^-_1$ and $\sigma^-_2$ for these two coins. The standard deviations for the two coins are $\sigma_1 = \sqrt{\frac{2}{6}\times1 - \left(\frac{2}{6}\right)^2} = 0.471$ and $\sigma_2 = \sqrt{\frac{4}{6}\times1 - \left(\frac{4}{6}\right)^2} = 0.471$. Then $\sigma^-_1 = \frac{\sigma_1}{\sqrt{6}} = 0.192$ and $\sigma^-_2 = \frac{\sigma_2}{\sqrt{6}} = 0.192$.
+
+%%   Assuming the underlying sample mean distribution to be Normal (central limit theorem), the 95\% confidence interval then are $\mu \pm 1.96 \sigma^-$. We have $1.96 \sigma^- = 0.38$. We thus get,
+%%   \begin{equation*}
+%%     -0.05 \leq p_1 \leq 0.71 \text{ and } 0.29 \leq p_2 \leq 1.05 \text{ with 95\% confidence.}
+%%   \end{equation*}
+  
+%% \item Its better to flip the second coin based on the available information, since getting a heads is more favourable in our case.
+
+%%   We might be willing to flip the first coin as well, especially because the our confidence  in the estimates of $p_1$ and $p_2$ are not very high. It might be possible that $p_1 > p_2$. We could be more sure with a larger number of flip trials of both the coins.
+%% \end{enumerate}

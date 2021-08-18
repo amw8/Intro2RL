@@ -1,0 +1,40 @@
+\textbf{Challenge Question:} Consider an MDP with three states $\mathcal{S} = \{1,2,3 \}$, where each state has two possible actions $\mathcal{A} =\{1, 2\}$ and a discount rate $\gamma = 0.5$.
+Suppose estimates of $Q(S,A)$ are initialized to 0 and you observed the 
+following episode according to an unknown behaviour policy where $S_3$ is the
+terminal state.
+
+\[
+	S_0 = 1, A_0 = 1, R_1 = -7, S_1 = 2, A_1= 2, R_2 = 5, S_2 = 1, A_2=1, R_3 = 10
+\]
+\begin{enumerate}
+
+%\item What method would you use to estimate $Q(S,A)$ where $\pi$ is $\epsilon$-greedy?
+\item Suppose you used Q-learning with the above trajectory to estimate $Q(S,A)$, what are your new estimates for $Q(S = 1,A = 1)$ using $\alpha=0.1$?
+\item What is one possible model for this environment? Is the model stochastic or deterministic?
+  \item Suppose in the planning loop, after search control, we would like to update $Q(S=1,A=1)$ with Q-planning.
+    What are the possible outputs of $\text{Model}(S = 1, A = 1)$?
+  \item If your model outputs $R=R_3$ and $S'= S_3$, what is $Q(S=1, A=1)$ after one Q-planning update?
+    Use the estimates of $Q(S,A)$ from before.
+\end{enumerate}
+
+%%%%%%%ANSWERS%%%%%%%
+%TODO
+%a) Since we do not know the behavioral policy we cannot use importance
+%   sampling. We should use expected SARSA.
+%b) Note that we visit this state action pair twice!
+%   First update:
+%   Q(1,1) = Q(1,1) + alpha[R + gamma MAX - Q(1,1) ]
+%   MAX = max Q(3,a) = 0 (due to initialization of values)
+%  Q(1,1) = 0 + 0.1[-7 + 0 - 0] = -0.7
+%  Notice that the second time we visit the pair we transition to
+%  the terminal state.
+%  Q(1,1) = Q(1,1) + alpha[R + gamma MAX - Q(1,1) ]
+%  MAX = max Q(S3,a) = 0  since at terminal state
+%  Q(1,1) = -0.7 + 0.1[10 + 0 + 0.7] = 0.37
+%c) Any model that is consistent with the trajectory,
+%   students should be careful to not assign P(S'=3|S=1,A=1) = 1.
+%d) SKIP
+%e) This update is the same as the second update in b) except
+%   with new estimates
+%   Q(1,1) = Q(1,1) + alpha[R + gamma MAX - Q(1,1) ]
+%   Q(1,1) = 0.37 + 0.1[10 + 0 - 0.37] = 1.333

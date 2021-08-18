@@ -1,0 +1,7 @@
+(\textit{Exercise 6.4 S\&B})
+The specific results shown in the right graph of the random walk example are dependent on the value of the step-size parameter, $\alpha$.
+Do you think the conclusions about which algorithm is better would be affected if a wider range of $\alpha$ values were used?
+Is there a different, fixed value of $\alpha$ at which either algorithm would have performed significantly better than shown? Why or why not?
+
+%% \textbf{Answer:}
+%% Most likely the conclusion that TD is better than Monte Carlo on this method won't change with a wider range of stepsizes. For the MC curve, we can see that the final performance of MC method is best at an intermediate value of $\alpha=0.03$. This is characteristic of performance against parameters (parameter studies) --- an intermediate value of parameters performs better than extreme values. As a result, trying higher and smaller values of $\alpha$ won't likely bring a big difference in the final performance of the MC method. And since the best performance of MC for $\alpha=0.03$ is still worse than the worst TD, the conclusions should remain the same that TD is superior to MC in this setting. Similarly, for TD, tuning the stepsize wouldn't create a big difference in terms of performance. \textcolor{red}{For TD this answer is vague. Maybe add a discussion about TD bounds}.

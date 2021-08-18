@@ -1,0 +1,21 @@
+\textbf{Challenge Problem:} Suppose we have a continuing MDP with a discount factor $\gamma$.
+Now suppose you have an identical MDP without a discount factor except we
+now have a termination probability $1-\gamma, 0 \leq \gamma <1$, at each
+time step.
+This implies that for any given state $S_t$ at time $t$, independent of which action
+the agent takes there's a $1-\gamma$ probability that the MDP terminates 
+\textit{after}
+the agent collects reward $R_{t+1}$.
+Show that the expected cumulative reward at time $t$ is the same for both
+MDPs, that is for the second MDP we have the following
+\[
+	E[G_t] = E[R_{t+1}+R_{t+2}\gamma + R_{t+3}\gamma^2 +\dots].
+\]
+
+Hint: Recall the law of total expectation (tower property)
+$E\left[E\left[X|Y\right]\right]$. Consider conditioning on the random
+variable $T$, the number of time steps before termination.
+Also note that $T$ follows the geometric distribution where
+$P(T=s) = \gamma^{s-1}(1-\gamma)$.
+
+\smallspace

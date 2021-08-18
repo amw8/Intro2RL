@@ -1,0 +1,16 @@
+\textbf{Challenge Problem}
+Optimization -- minimizing a function $f$ -- is an important problem in many fields
+including artificial intelligence. Suppose you know that the function $f$ is convex
+and differentiable, that is we have that
+\[
+	f(x) \geq f(y) + \langle \nabla f(y),x-y\rangle \quad \forall x, y.
+\]
+Clearly from the above, we have that $y$ is a global minima if $\nabla f(y) = 0$. 
+What if we wanted to minimize $f$ over a set $\mathcal{X}$ where we may not be able
+to find such a $y$, what condition would we need to check if a point $y^\ast$ minimizes
+$f$ on the set $\mathcal{X}$?
+Show that if $f(y^\ast) \leq f(x) \, \forall x \in \mathcal{X}$ then we must have
+\[
+	\langle \nabla f(y^\ast),x-y^\ast \rangle \geq 0 \quad \forall x \in \mathcal{X}.
+\]
+Note that $\langle x, y \rangle = \sum_i x_i y_i$ is the standard inner product notation.

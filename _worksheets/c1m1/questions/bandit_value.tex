@@ -1,0 +1,59 @@
+In class we saw how the bandit problem can be formulated as 
+a MDP. Suppose we have a bandit problem with two arms, with mean
+rewards $\mu_1 = 10, \mu_2=5$ for arm 1 and arm 2 respectively.
+Suppose we have an episodic task where an agent plays the above bandit problem
+twice. However, if they pull arm $1$ (take action 1) then the mean rewards 
+for each arm switch, that is $\mu_1=5, \mu_2=10$. If arm 2 is pulled 
+the bandit problem is replayed without change.
+If the agent plays the policy $\pi(\mbox{arm } 1|s) = 0.3$ at both time steps 
+then what is the value function? In other words, find $v_{\pi}(S)$
+for both states $S_1$ and $S_2$.
+\smallspace
+
+%% \textbf{Answer:}
+%% \textcolor{blue}{\textbf{THE QUESTION DESCRIPTION IS UNCLEAR TO ME.}}
+
+%% Let us model this problem as an MDP. Let there be four different states:
+%% \begin{enumerate}
+%% \item $s_1$ corresponding to the starting state with $\mu^{(s_1)}_1=10, \mu^{(s_1)}_2=5$,
+%% \item $s_2$ with $\mu^{(s_2)}_1=5, \mu^{(s_2)}_2=10$ (this is the state we reach after taking action $a_1$ in state $s_1$),
+%% \item $s_3$ with $\mu^{(s_3)}_1=10, \mu^{(s_3)}_2=5$ (this is the state we reach after taking action $a_2$ in state $s_1$), and
+%% \item $s_T$, the terminal state, which we reach after taking either action $a_1$ or $a_2$ from either of the states $s_1$ and $s_2$.
+%% \end{enumerate}
+
+%% All the transitions are deterministic, and the expected reward from a state is given by $\mu^{(s_i)}_1$ and $\mu^{(s_i)}_2$ for state $s_i$. Now let us find $v_\pi(S)$ for all the four states, for the general policy: $\pi(a_1 \;|\; S=s_i) = p_i$ and $\pi(a_2 \;|\; S=s_i) = 1-p_i$ for state $s_i$ with $i \in \{1, 2, 3\}$.
+%% \begin{itemize}
+%% \item $v_\pi(s_T) = 0$ by definition.
+%% \item For state $s_2$, we'll transition into $s_T$ irrespective of the action we take. Thus, we have
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     v_\pi(s_2) &=& \sum_a \pi(a|s_2) \sum_{s', r} p(s', r | s_2, a) (r + \gamma v_\pi(s') ) \\
+%%     &=& \pi(a_1|s_2) \sum_{r} p(s_T, r | s_2, a_1) (r + \gamma v_\pi(s_T) ) + \pi(a_2|s_2) \sum_{r} p(s_T, r | s_2, a_2) (r + \gamma v_\pi(s_T) )\\
+%%     &=& p_2 \sum_{r} p(s_T, r | s_2, a_1) (r + \gamma \times 0) + (1-p_2) \sum_{r} p(s_T, r | s_2, a_2) (r + \gamma \times 0 ) \\
+%%     &=& p_2 \times \mu^{(s_2)}_1 + (1-p_2) \times \mu^{(s_2)}_2 \\
+%%     &=& p_2 \times 5 + (1-p_2) \times 10 \\
+%%     &=& 10-5p_2.
+%%   \end{IEEEeqnarray*}
+%% \item For state $s_3$ we have, we'll again transition into $s_T$ irrespective of the action we take. So, we have
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     v_\pi(s_3) &=& \sum_a \pi(a|s_3) \sum_{s', r} p(s', r | s_3, a) (r + \gamma v_\pi(s') ) \\
+%%     &=& \pi(a_1|s_3) \sum_{r} p(s_T, r | s_3, a_1) (r + v_\pi(s_T) ) + \pi(a_2|s_3) \sum_{r} p(s_T, r | s_3, a_2) (r + v_\pi(s_T) )\\
+%%     &=& p_3 \sum_{r} p(s_T, r | s_3, a_1) (r + \gamma \times 0) + (1-p_3) \sum_{r} p(s_T, r | s_3, a_2) (r + \gamma \times 0 ) \\
+%%     &=& p_3 \times \mu^{(s_3)}_1 + (1-p_3) \times \mu^{(s_3)}_2 \\
+%%     &=& p_3 \times 10 + (1-p_3) \times 3 \\
+%%     &=& 3+7p_3.
+%%   \end{IEEEeqnarray*}
+%% \item Finally, for state $s_1$ we transition into $s_2$ upon taking action $a_1$ and into state $s_3$ upon taking action $a_2$. Therefore,
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     v_\pi(s_1) &=& \sum_a \pi(a|s_1) \sum_{s', r} p(s', r | s_1, a) (r + \gamma v_\pi(s') ) \\
+%%     &=& \pi(a_1|s_1) \sum_{r} p(s_2, r | s_1, a_1) (r + \gamma v_\pi(s_2) ) + \pi(a_2|s_1) \sum_{r} p(s_3, r | s_1, a_2) (r + \gamma v_\pi(s_3) )\\
+%%     &=& p_1 \sum_{r} p(s_2, r | s_1, a_1) (r + \gamma (10-5p_2)) + (1-p_1) \sum_{r} p(s_3, r | s_1, a_2) (r + \gamma (3+7p_3)) \\
+%%     &=& p_1 \sum_{r} r \cdot p(s_2, r | s_1, a_1)  +\gamma p_1 (10-5p_2) + (1-p_1) \sum_{r} r \cdot p(s_3, r | s_1, a_2)  + \gamma (1-p_1) (3+7p_3) \\
+%%     &=& p_1 \mu^{(s_1)}_1 +\gamma p_1 (10-5p_2) + (1-p_1)\mu^{(s_1)}_2 + \gamma (1-p_1) (3+7p_3) \\
+%%     &=& 10 p_1 +\gamma p_1 (10-5p_2) + 5 (1-p_1) + \gamma (1-p_1) (3+7p_3).
+%%   \end{IEEEeqnarray*}
+%% \end{itemize}
+
+%% For this question, assume $\gamma = 1$ and we are given that $p_1=p_2=p_3=0.3$. Putting these values in the above expressions we obtain:
+%% \begin{equation*}
+%%   v_\pi(s_1) =12.62, v_\pi(s_2)=8.5, v_\pi(s_3)=5.1, \text{and } v_\pi(s_T)=0.
+%% \end{equation*}

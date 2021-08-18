@@ -1,0 +1,17 @@
+(\textit{Exercise 6.8 S\&B})
+Show that an action-value version of
+$$G_{t} - V(S_{t}) = \sum_{k=t}^{T-1}\gamma^{k-t}\delta_{k}$$
+holds for the action-value form of the TD error
+$\delta_t = R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) -Q(S_{t}, A_{t})$,
+again assuming that the values don’t change from step to step.
+
+%% \textbf{Answer:}
+%% \begin{IEEEeqnarray*}{lCl}
+%%   G_t - Q(S_t, A_t) &=& R_{t+1} + \gamma G_{t+1} - Q(S_t, A_t) + \gamma Q(S_{t+1}, A_{t+1}) - \gamma Q(S_{t+1}, A_{t+1}) \\
+%%   &=& (R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t)) + \gamma (G_{t+1} - Q(S_{t+1}, A_{t+1})) \\
+%%   &=& \delta_t + \gamma (G_{t+1} - Q(S_{t+1}, A_{t+1})) \\
+%%   &=& \delta_t + \gamma \delta_{t+1} + \gamma^2 (G_{t+2} - Q(S_{t+2}, A_{t+2})) \\
+%%   &\vdots& \\
+%%   &=& \delta + \gamma \delta_{t+1} + \gamma^2 \delta_{t+2} + \cdots + \gamma^{T-t-1} \delta_{T-1} + \gamma^{T-t} (G_T - Q(S_T, \cdot)) \\
+%%   &=& \sum_{k=t}^{T-1} \gamma^{k-t} \delta_k.
+%% \end{IEEEeqnarray*}

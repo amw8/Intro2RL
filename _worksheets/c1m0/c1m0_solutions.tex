@@ -1,0 +1,275 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage}
+\usepackage{titling}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{IEEEtrantools}
+\usepackage{graphicx}
+
+\setlength{\droptitle}{-6em}   % This is your set screw, for shifting up the title
+\renewcommand{\baselinestretch}{1.1}
+\setlength{\parskip}{0.5em}
+
+\author{}
+\date{}
+\title{Worksheet 1 \vspace{-0.5cm}}
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+
+\begin{document}
+\maketitle
+\vspace{-2cm}
+
+\subsubsection*{Q1}
+Compute the partial derivatives  of $f(x,y) = x \text{ln}(y)$ with respect to $(x,y)$. The partial derivatives are simply the derivatives for each variable, assuming the others are fixed. Computing each partial derivative uses the exact same rules as derivatives for single variables.  
+\[
+\nabla f(x,y) =
+\begin{bmatrix}
+  \frac{\partial f(x,y)}{\partial x} \\
+  \frac{\partial f(x,y)}{\partial y} 
+\end{bmatrix}
+\]
+
+\subsubsection*{Answer:}
+\begin{equation*}
+  \nabla f(x, y) = \begin{bmatrix} \text{ln}(y) \\ \frac{x}{y} \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Q2}
+Compute the Jacobian matrix of $f$ with respect to (x,y,z), 
+\[
+f(x,y,z) = 
+\begin{bmatrix}
+  f_{1}(x,y,z) \\
+  f_{2}(x,y,z) \\
+  f_{3}(x,y,z)
+\end{bmatrix}
+=
+\begin{bmatrix}
+  xyz \\
+  y^2 \\
+  x+z
+\end{bmatrix}.
+\]
+
+\subsubsection*{Answer:}
+\begin{equation*}
+  {\bf J} =
+  \begin{bmatrix}
+    \frac{\partial f_1(x,y,z)}{\partial x} &
+    \frac{\partial f_1(x,y,z)}{\partial y} &
+    \frac{\partial f_1(x,y,z)}{\partial z} & \\
+    \frac{\partial f_2(x,y,z)}{\partial x} &
+    \frac{\partial f_2(x,y,z)}{\partial y} &
+    \frac{\partial f_2(x,y,z)}{\partial z} & \\
+    \frac{\partial f_3(x,y,z)}{\partial x} &
+    \frac{\partial f_3(x,y,z)}{\partial y} &
+    \frac{\partial f_3(x,y,z)}{\partial z}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    yz & xz & xy \\ 0 & 2y & 0 \\ 1 & 0 & 1
+  \end{bmatrix}
+\end{equation*}
+
+\subsubsection*{Q3}
+Suppose that in a lottery you have $0.01\%$ chance of winning and the prize is $\$1000$. The ticket to enter the lottery costs you $\$10$. What is the expected amount you would earn, when buying a ticket for this lottery? 
+
+\subsubsection*{Answer:}
+\begin{equation*}
+  \E[X] = \left(\frac{0.01}{100}\right) (1000 - 10) + \left(1 - \frac{0.01}{100}\right) (0 - 10) = -9.9
+\end{equation*}
+
+\subsubsection*{Q4}
+Adam and Martha propose a simple dice game to you. You can throw a die up to two times, and they will reward you with the amount equivalent to the face value of the die. If you throw a die once and 3 comes up, you can choose to take $\$3$ or throw again. If you choose to throw again and 2 comes up, you earn only $\$2$. The amount you earn is not additive and you only earn the amount of your last roll. 
+
+\begin{enumerate}
+\item Suppose in your first roll, the dice comes up as a 1.  What is the expected amount you would earn in your second roll?
+\item For what values in your first roll should you re-roll the die?
+\item What is the expected amount you would earn in this game if you play optimally?
+\end{enumerate}
+
+\subsubsection*{Answer:}
+\begin{enumerate}
+\item Assume a fair dice. The first die roll will not affect the second roll in any manner. So the expectation of the amount you would earn in the first roll is independent of the outcome of the first die, and can be calculated separately. If we let $X$ denote the random variable representing the amount earned in the second throw, then
+\begin{equation*}
+  \E[X] = \frac{1}{6} \times (1+2+3+4+5+6) = 3.5.
+\end{equation*}
+
+\item We should re--roll the die in case we get 1, 2, or 3. Since, re--rolling it will give an expected sum of 3.5.
+
+\item The optimal policy would be to roll the dice if we get 1, 2, or 3, and not roll it again if we get 4, 5, or 6. In this case the expected gain would be simply
+  \begin{equation*}
+    \underbrace{3 \times \frac{1}{6} \times \frac{1}{6} \times (1 + 2 + 3 + 4 + 5 + 6)}_{\text{Rolling the dice again incase of 1, 2, or 3}}  + \underbrace{\frac{1}{6} \times (4 + 5 + 6) }_{\text{Not rolling the dice again}} = 4.25.
+  \end{equation*}
+\end{enumerate}
+  
+\subsubsection*{Q5}
+Prove the tower property
+\[
+    \E[X] = \E\left[\E[X|Y]\right].
+\]
+
+% \textit{Hint}: $\E[X|Y]$ is a random variable and can be thought of as a function of $y, g(y)$.
+
+\subsubsection*{Answer:}
+\begin{IEEEeqnarray*}{lCl}
+  \E[X] &=& \sum_{x} x \cdot \text{Pr}(x) \\
+  &=& \sum_{x} x \sum_y \text{Pr}(x | y) \cdot \text{Pr}(y) \\
+  &=& \sum_y \Bigg( \sum_x x \cdot\text{Pr}(x | y) \Bigg) \cdot \text{Pr}(y) \\
+  &=& \sum_y \E[X | Y=y] \cdot \text{Pr}(y) \\
+  &=& \E\left[\E[X|Y]\right]
+\end{IEEEeqnarray*}
+
+
+\subsubsection*{Q6}
+In real world problems, we rarely know the distribution of a variable. Instead, we often make assumptions on its distribution. One commonly assumed distribution for continuous random variables is the Gaussian (or Normal) distribution. List at least two reasons that justifies using the Gaussian distribution in practice.
+
+\subsubsection*{Answer:}
+\begin{enumerate}
+\item Because of Central Limit Theorem (distribution of sample mean, i.e. mean of random variables drawn from arbitrary distributions, approaches a Normal distribution as the number of samples increases). If we assume that a real world process has many underlying contributing factors (coming from arbitrary distributions), then a Normal distribution is likely to model it well.
+\item Because of simplicity of the Normal distribution: it just has two parameters $\mu$ and $\sigma$, and has nice properties, for example it is a conjugate distribution.
+\end{enumerate}
+
+
+\subsubsection*{Q7}
+Given $\{y_1,y_2,\dotso,y_{n-1}, y_n\}$ and $f(y)=(\theta+1)y^{\theta}, 0 < y < 1.$, find the MLE for $\theta$.
+
+\subsubsection*{Answer:}
+The Maximum Likelihood Solution is defined by
+\begin{equation*}
+  \theta_{MLE} := \arg\max_\theta \ln\Big(\prod_{i=1}^n f(y_i) \Big) = \arg\max_\theta \sum_{i=1}^n \ln\big( (\theta+1) y_i^\theta \big).
+\end{equation*}
+
+We solve this by taking the derivative of the term following arg max with respect to $\theta$ and setting it to zero.
+\begin{IEEEeqnarray*}{lrCl}
+  & \frac{\partial}{\partial \theta} \sum_{i=1}^n \ln\big( (\theta+1) y_i^\theta \big) &=&  \sum_{i=1}^n \frac{\partial}{\partial \theta} \Bigg[\ln(\theta+1) + \theta \ln y_i \Bigg] = \sum_{i=1}^n \Bigg[\frac{1}{\theta + 1} + \ln y_i \Bigg] = 0 \\
+  \text{or} \quad & \frac{n}{\theta+1} &=& - \sum_{i=1}^n \ln y_i \\
+  \text{or} \quad & \theta_{MLE} &=& -\frac{n}{\sum_{i=1}^n \ln y_i} - 1. \\
+\end{IEEEeqnarray*}
+
+
+\subsubsection*{Q8}
+What do the 3rd and 4th central moments represent respectively (knowing that the 1st raw moment is the mean and the 2nd central moment is the variance).
+
+\subsubsection*{Answer:}
+3rd moment is Skewness (a measure of symmetry of a distribution), and the 4th moment is Kurtosis (a measure of whether the data are heavy-tailed or light-tailed relative to a normal distribution). See: \url{https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm}
+
+\subsubsection*{Q9}
+Consider the following game: you roll two (fair) 6-sided dice and win $\$1$ if the sum of the dice roll is 2, 5, 7, 8 or 11. Otherwise, you lose $\$1$.
+
+\begin{enumerate}
+    \item What is the expected value of the sum of the two dice?
+    \item What is the variance of the sum of the two dice?
+    \item What is the expected value of the winnings for playing this game. In other words, how much money are you expected to gain (or lose).
+    \item What is the variance of the winnings for this game?
+    \item Would you play this game as stated above? How about if the amount won or lost was $\$100$? How about $\$1000$?
+\end{enumerate}
+
+\subsubsection*{Answer:}
+\begin{enumerate}
+\item  Let $X_1$ and $X_2$ denote the random variables representing the value on the first and second roll of the dice respectively.
+  \begin{equation*}
+    \E[X_1 + X_2] = \E[X_1] + \E[X_2] = 2 \E[X_1] = 2 \times \frac{1}{6} \times (1 + 2 + 3 + 4 + 5 + 6) = 2 \times 3.5 = 7.
+  \end{equation*}
+
+\item For instructive purpose let us analyze the variance of the sum of the two dice first:
+  \begin{IEEEeqnarray*}{lCl}
+    \text{Var}[X_1 + X_2] &:=& \E\left[\Big(X_1+X_2 - \E[X_1+X_2]\Big)^2\right] \\
+    &=& \E[(X_1+X_2)^2] - \E[X_1+X_2]^2 \\
+    &=& \E[X_1^2 + X_2^2 + 2X_1X_2] - \E[X_1]^2 - \E[X_2]^2 - 2\E[X_1]\E[X_2] \\
+    &=& \Big(\E[X_1^2] - \E[X_1]^2\Big) + \Big(\E[X_2^2] - \E[X_2]^2\Big) + 2 \Big(\E[X_1X_2] - \E[X_1]\E[X_2]\Big) \\
+    &=& \text{Var}[X_1] + \text{Var}[X_2] + 2 \text{Cov}(X_1, X_2) \\
+    &=& \text{Var}[X_1] + \text{Var}[X_2]. \hfill \text{(since $X_1$ and $X_2$ are independent)} 
+  \end{IEEEeqnarray*}
+
+  Now continuing a similar analysis we did before, we get
+  \begin{IEEEeqnarray*}{lCl}
+    \text{Var}[X_1 + X_2] &=& \text{Var}[X_1] + \text{Var}[X_2] =2 \text{Var}[X_1] \\
+    &=& 2  \Big(\E[X_1^2] - \E[X_1]^2\Big)\\
+    &=& 2 \times \left(\frac{1}{6} \times (1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2) - 3.5^2\right) \\
+    &=& 5.83.    
+  \end{IEEEeqnarray*}
+
+\item We have the following combinations for the digits on the dice for which we gain $\$1$:
+  \begin{itemize}
+  \item $X_1 + X_2 = 2: \quad \{(1, 1)\}$,
+  \item $X_1 + X_2 = 5: \quad\{(1, 4), (2, 3), (3, 2), (4, 1)\}$,
+  \item $X_1 + X_2 = 7: \quad\{(1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1)\}$,
+  \item $X_1 + X_2 = 8: \quad\{(2, 6), (3, 5), (4, 4), (5, 3), (6, 2)\}$, and
+  \item $X_1 + X_2 = 11: \;\; \{(5, 6), (6, 5)\}$.
+  \end{itemize}
+  With this information, the expectation is straightforward to calculate. If we let $W$ represent the random variable denoting the amount of winnings:
+  \begin{equation*}
+    \E[W] = \frac{18}{36} \times (+1) + \frac{18}{36} \times (-1) = 0.
+  \end{equation*}
+
+\item Using the above information we get
+  \begin{equation*}
+    \text{Var}[W] = \E[W^2] - \E[W]^2 = \left(\frac{18}{36} \times (+1)^2 + \frac{18}{36} \times (-1)^2\right) - 0^2 = 1.
+  \end{equation*}
+
+\item It is equally likely for us to win or lose the money in this game -- so it is purely dependent on luck. It would be more wise to play this game for a smaller amount if we want to minimize the risk of losing money. On the flip side, playing with a smaller amount would also decrease the potential gains.
+  
+\end{enumerate}
+
+\subsubsection*{Q10}
+Now suppose a game where you choose to flip one of two (possibly unfair) coins. You win $\$1$ if your chosen coin shows heads and lose $\$1$ if it shows tails.
+Note that you do not know the probability of the coin outcomes. Instead, you are able to view 6 sample flips for each coin respectively: (T,H,H,T,T,T) and (H,T,H,H,H,T).
+
+\begin{enumerate}
+    \item For each coin: what is the MLE estimate for the probability of heads $p$? Construct a confidence interval for $p$.
+    \item Which coin would you flip? Would you be willing to flip a coin other than the one you chose?
+\end{enumerate}
+
+\subsubsection*{Answer:}
+\begin{enumerate}
+\item Represent $T$ by 0 and $H$ by a 1. Then the MLE estimate of the probability of getting a heads is just the mean of the input data. If $p_1$ and $p_2$ denote the probability of heads for coin 1 and coin 2 respectively, then $p_1 = \frac{2}{6} = 0.33$ and $p_2 = \frac{4}{6} = 0.67$.
+
+  To compute the confidence intervals, we will first need to compute the sample standard error (standard deviation over the square root of sample size) $\sigma^-_1$ and $\sigma^-_2$ for these two coins. The standard deviations for the two coins are $\sigma_1 = \sqrt{\frac{2}{6}\times1 - \left(\frac{2}{6}\right)^2} = 0.471$ and $\sigma_2 = \sqrt{\frac{4}{6}\times1 - \left(\frac{4}{6}\right)^2} = 0.471$. Then $\sigma^-_1 = \frac{\sigma_1}{\sqrt{6}} = 0.192$ and $\sigma^-_2 = \frac{\sigma_2}{\sqrt{6}} = 0.192$.
+
+  Assuming the underlying sample mean distribution to be Normal (central limit theorem), the 95\% confidence interval then are $\mu \pm 1.96 \sigma^-$. We have $1.96 \sigma^- = 0.38$. We thus get,
+  \begin{equation*}
+    -0.05 \leq p_1 \leq 0.71 \text{ and } 0.29 \leq p_2 \leq 1.05 \text{ with 95\% confidence.}
+  \end{equation*}
+  
+\item Its better to flip the second coin based on the available information, since getting a heads is more favourable in our case.
+
+  We might be willing to flip the first coin as well, especially because the our confidence  in the estimates of $p_1$ and $p_2$ are not very high. It might be possible that $p_1 > p_2$. We could be more sure with a larger number of flip trials of both the coins.
+\end{enumerate}
+  
+
+\subsubsection*{Q11}
+Suppose you start a betting game with $\$5000$ and roll a 6 sided die 100 times. Before any dice rolls however, you must decide on a proportion of your wealth to be wagered for each dice roll. If the die shows 1 or 2, you will lose $12\%$ of your wager. If the die shows 3, 4, 5 or 6 you will win $10\%$ of your wager.
+
+\begin{enumerate}
+    \item What is a good proportion to bet?
+    \item How much are you expected to win with this proportion?
+    \item What is the probability of you losing over $50\%$ of your wealth by the end of the game?
+    \item What is the probability of you losing any money at all?
+\end{enumerate}
+\subsubsection*{Answer:}
+
+\subsubsection*{Q12}
+We say an estimator is unbiased if its expected value equals the true value of the parameter being estimated. For example, if we roll a die 10 times and denote the value of the ith roll to be $X_i$, then the sample mean (average roll) is an unbiased estimator of the true mean since
+
+\[
+    E\left[\frac{\sum_{i=1}^{10}{X_i}}{10}\right] = E[X].
+\]
+
+Where $E[X]$ is the expected value of a roll.
+
+Suppose you would like to estimate what the expected roll of a fair die is but you only have a loaded die with probability mass function $\Tilde{p}(x)$. Show that $Y = X \frac{1/6}{\Tilde{p}(X)}$ is an unbiased estimator of the mean for a roll with a fair die, where $X$ is the outcome of the loaded die.
+
+\subsubsection*{Answer:}
+\begin{IEEEeqnarray*}{lCl}
+  \E_{\text{loaded die}}\left[X \frac{1/6}{\Tilde{p}(x)}\right] &=& \sum_{x \in \{1, 2, 3, 4, 5, 6\}} \Tilde{p}(x) \cdot \Bigg(X \frac{1/6}{\Tilde{p}(x)}\Bigg) \\
+  &=& \sum_{x \in \{1, 2, 3, 4, 5, 6\}} X \cdot \frac{1}{6} \\
+  &=& \E_{\text{fair die}} \left[X\right].
+\end{IEEEeqnarray*}
+
+The ratio $\frac{1/6}{\Tilde{p}(x)}$ is known as the importance sampling ratio. We may discuss more about it later in the course, and its connection to Off--policy learning.
+
+\end{document}

@@ -1,0 +1,20 @@
+\textbf{(Challenge Question)}
+(\textit{Exercise 6.13 S\&B})
+What are the update equations for Double Expected Sarsa with an $\epsilon$-greedy target policy?
+
+%% \textbf{Answer:}
+%% Let $A'$ denote the greedy action taken at state $S'$. To calculate the expected Sarsa update, we first need to calculate $\E_\pi[Q(S', A')]$. For an $\epsilon$--greedy policy, we would have
+%% \begin{IEEEeqnarray*}{lCl}
+%%   \E_\pi[Q(S', A')] &=& \sum_a \pi(a | S') Q(S', a) \\
+%%   &=& \pi(A' | S') Q(S', A') + \sum_{a \neq A'} \pi(a | S') Q(S', a) \\
+%%   &=& \left(1 - \epsilon + \frac{\epsilon}{|\mathcal{A}|} \right) Q(S', A') + \frac{\epsilon}{|\mathcal{A}|} \sum_{a \neq A'} Q(S', a),
+%% \end{IEEEeqnarray*}
+%% where $|\mathcal{A}|$ denotes the number of actions in the action space. Now we will use the double learning idea to calculate the value $Q(S', A')$. This gives us the following update for double expected SARSA:
+%% \begin{IEEEeqnarray*}{lCl}
+%%   Q_1(S_t, A_t) &\leftarrow& Q_1(S_t, A_t) \\
+%%   && + \alpha \left[ R_{t+1} + \gamma \left(\frac{\epsilon}{|\mathcal{A}|} \sum_{a \neq A'} Q_1(S_{t+1}, a) + \left(1 - \epsilon + \frac{\epsilon}{|\mathcal{A}|} \right) Q_2(S_{t+1}, A') \right) - Q_1(S_t, A_t) \right],
+%% \end{IEEEeqnarray*}
+
+%% where $A' = \arg\max_a Q_1(S_{t+1}, a)$.
+
+%% \textcolor{red}{Can the double learning idea also help in policies such as Softmax over the action values?}

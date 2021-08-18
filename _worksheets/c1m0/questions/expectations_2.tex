@@ -1,0 +1,25 @@
+ Adam and Martha propose a simple dice game to you. You can throw a die up to two times, and they will reward you with the amount equivalent to the face value of the die. If you throw a die once and 3 comes up, you can choose to take $\$3$ or throw again. If you choose to throw again and 2 comes up, you earn only $\$2$. The amount you earn is not additive and you only earn the amount of your last roll. 
+        
+\begin{enumerate}[label=(\alph*)]
+        \item Suppose in your first roll, the dice comes up as a 1.  What is the expected amount you would earn in your second roll?
+        \item For what values in your first roll should you re-roll the die?
+        \item What is the expected amount you would earn in this game if you play optimally?
+\end{enumerate}
+
+\bigspace        
+        
+%% \textbf{Answer:}
+%% \begin{enumerate}
+%% \item Assume a fair dice. The first die roll will not affect the second roll in any manner. So the expectation of the amount you would earn in the first roll is independent of the outcome of the first die, and can be calculated separately. If we let $X$ denote the random variable representing the amount earned in the second throw, then
+%% \begin{equation*}
+%%   \E[X] = \frac{1}{6} \times (1+2+3+4+5+6) = 3.5.
+%% \end{equation*}
+
+%% \item We should re--roll the die in case we get 1, 2, or 3. Since, re--rolling it will give an expected sum of 3.5.
+
+%% \item The optimal policy would be to roll the dice if we get 1, 2, or 3, and not roll it again if we get 4, 5, or 6. In this case the expected gain would be simply
+%%   \begin{equation*}
+%%     \underbrace{3 \times \frac{1}{6} \times \frac{1}{6} \times (1 + 2 + 3 + 4 + 5 + 6)}_{\text{Rolling the dice again incase of 1, 2, or 3}}  + \underbrace{\frac{1}{6} \times (4 + 5 + 6) }_{\text{Not rolling the dice again}} = 4.25.
+%%   \end{equation*}
+%% \end{enumerate}
+                          

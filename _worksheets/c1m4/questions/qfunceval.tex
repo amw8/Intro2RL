@@ -1,0 +1,11 @@
+In iterative policy evaluation, we seek to find the value function for a policy
+$\pi$ by applying the Bellman equation many times to generate a sequence of value
+functions $v_k$ that will eventually converge to the true value function 
+$v_\pi$.
+How can we modify the update below to generate a sequence
+of action value functions $q_k$?
+\[
+	v_{k+1}(s) = \sum_a\pi(a|s)\sum_{s^\prime, r}p(s^\prime,r|s,a)\left[r+
+	\gamma v_{k}(s^\prime)\right]
+\]
+

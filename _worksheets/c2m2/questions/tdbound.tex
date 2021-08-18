@@ -1,0 +1,18 @@
+Suppose that in an environment, state transitions are deterministic and that reward is bounded so that $R_{min} = 0$ and $R_{max} = 1$, with $\mathbb{E}[R_{t}] = 0.5$. Find the maximum and minimum possible TD error $\delta_{t} = R_{t+1} + \gamma V(S_{t+1}) - V(S_{t})$, where $\gamma = 0.9$ and $V = v_{\pi}$ with deterministic policy $\pi$.
+% max: 1 - 0.5 = 0.5
+% min: 0 - 0.5 = -0.5
+
+%% \textbf{Answer:}
+%% We know that the for the exact value function $v_\pi$,
+%% \begin{equation*}
+%%   v_\pi(S_t) = \E[R_{t+1} + \gamma v_\pi(S_{t+1})] = \E[R_{t+1}] + \gamma v_\pi(S_{t+1}).
+%% \end{equation*}
+%% Therefore, we can write
+%% \begin{IEEEeqnarray*}{lCl}
+%%   \delta_t &=& R_{t+1} + \gamma v_\pi(S_{t+1}) - v_\pi(S_t) \\
+%%   &=& R_{t+1} + \gamma v_\pi(S_{t+1}) - \E[R_{t+1}] - \gamma v_\pi(S_{t+1}) \\
+%%   &=& R_{t+1} - \E[R_{t+1}] \\
+%%   &=& R_{t+1} - 0.5.
+%% \end{IEEEeqnarray*}
+
+%% Therefore, the maximum TD error is $\delta = R_{\text{max}} - 0.5 = 0.5$ and the minimum TD error is $\delta = R_{\text{min}} - 0.5 = -0.5$.

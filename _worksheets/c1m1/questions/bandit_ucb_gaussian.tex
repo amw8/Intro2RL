@@ -1,0 +1,10 @@
+\textbf{Challenge Problem:} Imagine your agent is solving a 3-armed bandit problem. Unlike usual, you get extra information: you know that the reward for each action is randomly distributed according to a Gaussian distribution with unknown mean, and a variance of 1. Each of the three actions might have a different mean, $\mu_a$ for Gaussian $\mathcal{N}(\mu_{a}, 1)$. How might the action rule for the UCB algorithm change, given this information? Hint: Recall that a 95\% confidence interval assuming a Gaussian distribution with variance $\sigma = 1$, for sample average $Q_t(a)$ using $N_t(a)$ samples, is $(Q_t(a) - 1.96 \frac{\sigma}{\sqrt{N_t(a)}}, Q_t(a) + 1.96 \frac{\sigma}{\sqrt{N_t(a)}})$. 
+\smallspace
+
+%% \texbf{Answer:}
+%% Once we know that the reward for each action is randomly distributed according to a Gaussian distribution, we have a direct way of computing the uncertainty in our action value estimates: use 1.96 times the sample variance for a 95\% confidence. The UCB algorithm can then be written as:
+%% \begin{equation*}
+%%   A_t := \arg\max_{a \in \{1, 2, 3\}} \Bigg[Q_t(a) + 1.96 \frac{\sigma}{\sqrt{N_t(a)}}\Bigg],
+%% \end{equation*}
+
+%% where $\sigma$ is the variance of action values (preferrably computed incrementally), $N_t(a)$ is the count of how many times each action has been taken, and $Q_t(a)$ is the action value estimate of action $a$ at time $t$. Using the value of 1.96 in the above expression ensures that there is just a $\frac{1-0.95}{2} = 0.025 \equiv 2.5\%$ chance that actual action value $q^*(a) > \Bigg[Q_t(a) + 1.96 \frac{\sigma}{\sqrt{N_t(a)}}\Bigg]$. We could use constants other than 1.96 for a different confidence level, computed with the help of properties for the Gaussian distribution. This removes the need to find a the hyperparameter $c$.

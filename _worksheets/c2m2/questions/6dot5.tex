@@ -1,0 +1,7 @@
+\textbf{(Challenge Question)} (\textit{Exercise 6.5 S\&B}) In the right graph of the random walk example, the RMS error of the
+TD method seems to go down and then up again, particularly at high $\alpha$’s.
+What could have caused this?
+Do you think this always occurs, or might it be a function of how the approximate value function was initialized?
+
+%% \textbf{Answer:}
+%% \textcolor{red}{This is based on Rupam's PhD thesis (Section 9.7). I don't understand this very well and I'm unable to explain this in a simple and intuitive manner.} These forms of oscillations are charecteristic for TD algorithm, since the matrix ${\bf A}$ in the TD update equations is assymetric and as a result, the imaginary parts of its eigenvalues are non--zero. This causes the oscillations seen in the figure. \textcolor{red}{I don't think it would depend on how the value function was initialized}.

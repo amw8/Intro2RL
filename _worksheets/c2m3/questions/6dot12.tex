@@ -1,0 +1,21 @@
+(\textit{Exercise 6.12 S\&B})
+Suppose action selection is greedy. Is Q-learning then exactly the same
+algorithm as Sarsa? Will they make exactly the same action selections and weight
+updates? (\textbf{Additional Challenge:} What about Expected Sarsa? Does it have the same or different updates as Q-learning or Sarsa?)
+
+\begin{figure}[h!]
+  \center
+\includegraphics[width=\linewidth]{figures/sarsa.pdf}
+\end{figure}
+
+\begin{figure}[h!]
+  \center
+\includegraphics[width=\linewidth]{figures/qlearning.pdf}
+\end{figure}
+
+%% \textbf{Answer:}
+%% Yes. If the action selection (during the episode) is greedy, Q-learning and SARSA will make the same action selections and the same weight updates: in case of greedy action selection, the next action $A' = \arg\max_a Q(S', a)$, and therefore $Q(S', A') \equiv \max_a Q(S', a)$.
+
+%% Expected SARSA will also have the same update as Q-learning and SARSA in case of greedy action selection, since for a greedy policy $\pi(A'|S') = 1$ and thus $\sum_a \pi(a | S') Q(S', a) = Q(S', A')$.
+
+%% If the behavior policy is not greedy and the target policy is greedy, then the update for expected SARSA will be the same as Q-learning, and SARSA won't be applicable in this case.

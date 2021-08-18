@@ -1,0 +1,6 @@
+Assume you have a bandit problem with 4 actions, where the agent can see rewards from the set $\mathcal{R} = \{-3.0, -0.1, 0, 4.2\}$. Assume you have the probabilities for rewards for each action: $p(r | a)$ for $a \in \{1, 2, 3, 4\}$ and $r \in \{-3.0, -0.1, 0, 4.2\}$. How can you write this problem as an MDP? Remember that an MDP consists of ($\mathcal{S}, \mathcal{A}, \mathcal{R}, P, \gamma)$. 
+ 
+\textbf{More abstractly}, recall that a Bandit problem consists of a given action space $\mathcal{A} = \{1, ..., k\}$ (the $k$ arms) and the distribution over rewards $p(r | a)$ for each action $a \in \mathcal{A}$. Specify an MDP that corresponds to this Bandit problem. 
+% Answer: Action space the same, set of possible rewards the same, S = {1}, p(s', r | s, a) = p(r | a) where s', s always equal 1, gamma = 0, 
+%
+\smallspace

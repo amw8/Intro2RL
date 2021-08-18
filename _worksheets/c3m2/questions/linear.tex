@@ -1,0 +1,30 @@
+A student is tasked to program an agent for a 100-by-100 grid-world problem with a fixed goal state at the top-right corner $(99,99)$.
+In this grid-world problem, rewards are $-1$ at each time step, unless the state is terminal in which the reward is $0$ and the episode ends.
+The student first considers a tabular feature representation.
+Due to the size of the grid-world however, the student is worried about generalization.
+
+\begin{enumerate}
+  \item  What is the dimension of the tabular representation?
+    Suppose the student chooses to represent the state by the row $x$ and the column $y$, where $\mathbf{x}(s)=(x,y)$.
+    What is the dimension of this representation and how would this differ from tabular representation?
+    % MARTHAC: Nov 29, 2019, Too much, adding too much to the scope of the question
+    %How is this different from tile coding?
+  \item Design a feature that can be used with the row and column $(x,y)$ that would improve performance of linear TD in this fixed grid-world problem.
+  % MARTHAC: Nov 29, 2019: Again, too much in the question. What is the goal here? A focused question can be more effective. The goal of this question is about creating features that promote generalization
+    %Do you think your hand-design feature be helpful or harmful if something changed in the environment?
+  \item Suppose that the student designs a new feature representation $\mathbf{x}'(s) = (x,y,z)$, where the first two components are the row and column.
+    The last component is binary, $z=1$ when the agent is 2 squares away from the goal and $z= 0$ otherwise.
+    What is the dimension of feature vector in this case?
+    How much will this help with generalization instead of only using $\mathbf{x}(s) = (x,y)$?
+  %\item Suppose that $\mathbf{x}'(s)$ has a bug, and the last component $z$ is never activated (stays at a constant of $0$).
+  %  How would the fixed point solution of $\mathbf{w}_{\text{TD}-\mathbf{x}}$, change with the buggy feature representation $\mathbf{x}'(s)$?
+  %  Hint: The formula for $\mathbf{w}_{\text{TD}-\mathbf{x}}$, with feature repesentation $\mathbf{x}(s)$, is
+  %  $$\mathbf{w}_{\text{TD}} = \mathbf{A}^{-1} \mathbf{b} $$
+  %  where $\mathbf{A} = \mathbb{E}[\mathbf{x}(s_{t})( \mathbf{x}(s_{t})- \mathbf{x}(s_{t+1})^{T})]$ and $\mathbf{b}= \mathbb{E}[R_{t+1}\mathbf{x}(s_{t})]$
+\end{enumerate}
+
+% a) tabular: 100*100, row/column: 2.
+% b) Generally, this hand-designed feature will hurt performance because
+%    the agent needs to learn an extra weight and that weight does not help achieve a new goal.
+% c) Notice that w is now 3 dimensional, and that this feature is correlated with the goal state.
+% d) The solution will not change.

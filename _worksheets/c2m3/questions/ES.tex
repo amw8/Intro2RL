@@ -1,0 +1,7 @@
+In Monte Carlo control, we required that every state-action pair be visited infinitely often.
+One way this can be guaranteed is by using exploring starts. Can we use exploring starts for Sarsa? Further, we have talked about using Sarsa with an $\epsilon$-greedy policy. Can we use Monte Carlo with an $\epsilon$-greedy policy? Does this ensure sufficient exploration?
+
+%% \textbf{Answer:}
+%% Yes. From the book ``Sarsa converges with probability 1 to an optimal policy and action-value function as long as all state--action pairs are visited an infinite number of times''. And since exploring starts explicitly satisfies this assumption, we can use SARSA with exploring starts without any issues.
+
+%% Yes, Monte--Carlo can be used with an $\epsilon$--greedy policy. An  $\epsilon$--greedy policy is also an  $\epsilon$--soft policy. And we know that the policy iteration theorem holds for $\epsilon$--soft policy (see the book, Chapter 5); therefore MC works with  an $\epsilon$--greedy policy. Yes, this ensures sufficient exploration in the limit, since each action has a non--zero probability of being chosen.

@@ -1,0 +1,20 @@
+Off-policy Monte Carlo prediction allows us to use sample trajectories to 
+estimate the value function for a policy that may be different than the one
+used to generate the data. Assume the behaviour policy is uniform random: it takes each action with equal probability in each state. The environment has two possible states $\{1,2\}$ and two possible actions in each state $\{1, 2\}$, with $\gamma = 1.0$. Suppose we collect the following episode, by following the behaviour policy
+%
+\begin{equation*}
+	S_0 = 1, A_0 = 2, R_1 = 3, S_1 = 2, A_1 = 1, R_2 = -4
+\end{equation*}
+%
+But, we want to evaluate target policy $\pi$, which selects action 1 with 0.3 probability in each state.
+%What is $\rho_{0:0}, \rho_{0:1}$? 
+Give an estimate of $V_\pi(S=1)$ and $V_\pi(S=2)$, using the episode generated under $b$.
+
+
+
+%%%%%%ANSWERS%%%%%%
+% rho 0:0 = 0.7/0.5 = 1.4, rho 0:1 = 1.4*0.3/0.5 = 0.84
+% V(1) = rho*(3+0.5*-4) where rho = ((0.7)/(0.5))(0.3/0.5) so the estimate
+% is 0.84
+% V(2) = rho*(-4) where rho = 0.3/0.5 => estimate = -2.4
+

@@ -1,0 +1,29 @@
+\begin{enumerate}[label=(\alph*)]
+    \item Show that if $X$ and $Y$ are independent, then $E[XY] = E[X]E[Y]$.
+  \item Recall that the correlation between two variables $X$ and $Y$ is $$\frac{E[(X - E[X])\cdot(Y-E[Y])]}{\sigma_X \sigma_{Y}}.$$
+    Show that if $X$ and $Y$ are independent, then they are uncorrelated (correlation is zero). Provide an example of $X$ and $Y$ that are uncorrelated but not independent.
+\end{enumerate}
+
+\smallspace
+
+%% \textbf{Answer:}
+%% \begin{enumerate}
+%% \item We have
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     \E[XY] &=& \sum_x \sum_y x y \Pr(X=x, Y=y) \\
+%%     &=& \sum_x \sum_y x y \Pr(X=x) \Pr(Y=y) \\
+%%     &=& \sum_x x \Pr(X=x) \sum_y y \Pr(Y=y) \\
+%%     &=& \E[X] \E[Y],
+%%   \end{IEEEeqnarray*}
+  
+%%     where in the second line, we have used the fact that $\Pr(X=x, Y=y) = \Pr(X=x) \Pr(Y=y)$ when $X$ and $Y$ are independent.
+%% \item We show that the numerator of the correlation is zero, when $X$ and $Y$ are independent:
+%%   \begin{IEEEeqnarray*}{lCl}
+%%     \E[(X - \E[X])(Y - \E[Y])] &=& \E[XY - X\E[Y] - Y\E[X] + \E[X]\E[Y]] \\
+%%     &=& \E[XY] - \E[X]\E[Y] - \E[Y]\E[X] + \E[X]\E[Y] \\
+%%     &=& \E[XY] - \E[X]\E[Y] \\
+%%     &=& \E[X]\E[Y] - \E[X]\E[Y] \\
+%%     &=& 0.
+%%   \end{IEEEeqnarray*}
+
+%%   I'm unable to come up with a good example for $X$ and $Y$ which are uncorrelated and dependent. On the internet, the following example is quite widely used (\url{http://mathforum.org/library/drmath/view/69928.html}): Let $X \sim \mathcal{N}(0, 1)$ and $Y = X^2$, then their correlation is zero because the numerator of the correlation term is $\E[XY] - \E[X]\E[Y] = \E[X^3] - \E[X]^2 = 0 - 0 = 0$, whereas the variables are clearly dependent on each other.

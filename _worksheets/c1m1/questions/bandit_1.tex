@@ -1,0 +1,21 @@
+Suppose a game where you choose to flip one of two (possibly unfair) coins. You win $\$1$ if your chosen coin shows heads and lose $\$1$ if it shows tails.
+
+
+\begin{enumerate}[label=(\alph*)]
+  \item Model this as a K-armed bandit problem: define the action set.%\{1,2\}
+  \twolines
+  \item Is the reward a deterministic or stochastic function of your action? %stochastic
+  \twolines
+  \item You do not know the coin flip probabilities. Instead, you are able to view 6 sample flips for each coin respectively: (T,H,H,T,T,T) and (H,T,H,H,H,T). Use the sample average formula (equation 2.1 in the book) to compute the estimates of the value of each action. %Q(1) = -0.333333; Q(2) = +0.333333
+  \twolines
+  \item Decide on which coin to flip next! Assume it's an exploit step. %action 2, i.e. coin 2
+  \twolines
+\end{enumerate}
+
+%% \textbf{Answer:}
+%% \begin{enumerate}
+%% \item This problem can be modeled as a 2--armed bandit problem. The two actions here are: $a_1$: flipping the first coin and $a_2$: flipping the second coin. The optimal action value of each action is $q_*(a_i) = \E[R_t | A_t=a] = (+1) * p_i + (-1) * (1-p_i) = 2 p_i -1$ for $i \in \{1, 2\}$ with $p_i$ denoting the probability of getting a heads for the $i$th coin.
+%% \item The reward is a stochastic function of the action. Choosing a coin fixes the probability of getting a head/tail from that coin and the randomness comes from the flipping action itself.
+%% \item The reward sequence of the first coin is $\{-1, +1, +1, -1, -1, -1\}$ and that of the second coin $\{+1, -1, +1, +1, +1, -1\}$. Taking the average, we get $Q_7(a_1) = -0.33$ and $Q_7(a_2) = +0.33$.
+%% \item Given the above action value estimates, we'll choose the second coin.
+%% \end{enumerate}

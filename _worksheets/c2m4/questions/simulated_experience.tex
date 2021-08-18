@@ -1,0 +1,26 @@
+An agent is in a 4-state MDP, $\mathcal{S} = \{1,2,3,4\}$, where each state has two actions $\mathcal{A} = \{1,2\}$.
+Assume the agent saw the following trajectory,
+\begin{align*}
+  & S_{0} = 1, A_{0} = 2, R_{1} = -1,\\
+  &S_{1} = 1, A_{1} = 1, R_{2} = 1, \\
+  &S_{2} = 2, A_{2} = 2, R_{3} = -1, \\
+  & S_{3} = 2, A_{3} = 1, R_{4} = 1, \\ 
+  & S_{4} = 3, A_{4} = 1, R_{5} = 100, \\
+  &S_{5} = 4
+  \end{align*}
+and uses Tabular Dyna-Q with $5$ planning steps for each interaction with the environment.
+
+\begin{enumerate}
+  \item Once the agent sees $S_{5}$, how many Q-learning updates has it done with \textbf{real experience}? How many updates has it done with \textbf{simulated experience}?
+  \item Which of the following are possible (or not possible) simulated transitions $\{S, A, R, S'\}$ given the above observed trajectory with a deterministic model and random search control?
+    \begin{enumerate}
+      \item $\{S = 1, A = 1, R = 1 , S' = 2\}$ %Possible
+      \item $\{S = 2, A = 1, R = -1 , S' = 3\}$ %Not Possible
+      \item $\{S = 2, A = 2, R = -1 , S' = 2\}$ %Possible
+      \item $\{S = 1, A = 2, R = -1 , S' = 1\}$ %Possible
+      \item $\{S = 3, A = 1, R = 100, S' = 5\}$ %Not possible
+    \end{enumerate}
+\end{enumerate}
+
+% Answers:
+% 1. Uses 5 updates with real experience, 25 updates with simulated
