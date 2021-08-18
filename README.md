@@ -43,7 +43,7 @@ The course will use Python 3. We will use elementary ideas of probability, calcu
 
 #### Course Prerequisites
 * CMPUT 175 or CMPUT 275<br>
-* CMPUT 267 or consent of the instructor (upper level ML course or non-applied statistics course).
+* CMPUT 267 or Stat 265 or CMPUT 466 or consent of the instructor (upper level ML course or non-applied statistics course).
  
 ### Course Topics
 With a focus on AI as the design of agents learning from experience to predict and control their environment, topics will include
