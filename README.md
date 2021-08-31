@@ -20,11 +20,17 @@ ETLC E1-007
 ### Instruction Team:
 Adam White (amw8@ualberta.ca)<br>
 Andrew Patterson (ap3@ualberta.ca )<br>
-...<br>
- 
+Subhojeet Pramanik (subhojee@ualberta.ca)<br>
+Tian Tian (ttian@ualberta.ca)<br>
+Yongchang Hao (yongcha1@ualberta.ca)<br>
+
 ### Office Hours:
 Adam: TBD<br>
-TAs will hold office hours spread across the week
+TAs will hold a 2hr office hour slot every week
+Andrew: TBA<br>
+Subhojeet: TBA<br>
+Tian: TBA<br>
+Yongchang: TBA<br>
 
 ### TA Email Address:
 grp-fall21-cmput365-lec-a1@ualberta.ca
@@ -65,8 +71,7 @@ There are 11 graded assignments. They are usually python notebooks, but sometime
 The mini essays will be writing assignments. You will be given a list of 10 or so discussion topics (no other topics are allowed) and you will need to write 200 to 300 words discussing the topic. Writing is an important skill. You will be marked both on your clarity of thought (and content), as well as your grammar, spelling, sentence & paragraph structure, and overall polish. Each mini-essay will we worth 2.5% of your final grade.
 
 * Assignments (graded on Coursera): 30%
-* correctly signing up for the private session on Coursera: 1%
-* Project: 4%
+* Project: 5%
 * Quiz: 5%
 * Mini essay (x2): %5
 * Participation: 5%
