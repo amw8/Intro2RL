@@ -9,7 +9,7 @@
 This page!!!
 
 ### Term: 
-Fall, 2010 
+Fall, 2021 
 
 ### Lecture Date and Time: 
 MWF 13:00 - 13:50 p.m.
@@ -19,13 +19,13 @@ ETLC E1-007
 
 ### Instruction Team:
 Adam White (amw8@ualberta.ca)<br>
-Andrew Patterson (ap3@ualberta.ca )<br>
-Subhojeet Pramanik (subhojee@ualberta.ca)<br>
-Tian Tian (ttian@ualberta.ca)<br>
-Yongchang Hao (yongcha1@ualberta.ca)<br>
+Andrew Patterson<br>
+Subhojeet Pramanik<br>
+Tian Tian<br>
+Yongchang Hao<br>
 
 ### Office Hours:
-Adam: TBD<br>
+Adam: Wednesday directly after class (in 307 Athabasca Hall)<br>
 TAs will hold a 2hr office hour slot every week
 Andrew: TBA<br>
 Subhojeet: TBA<br>
@@ -33,8 +33,8 @@ Tian: TBA<br>
 Yongchang: TBA<br>
 
 ### TA Email Address:
-grp-fall21-cmput365-lec-a1@ualberta.ca
-(Do not presonally email the TAs. They will only respond via the grp-fall21-cmput365-lec-a1 email)
+cmput365@ualberta.ca
+(Do not presonally email the TAs. They will only respond via cmput365@ualberta.ca)
 
 ### Overview
 This course provides an introduction to reinforcement learning intelligence, which focuses on the study and design of agents that interact with a complex, uncertain world to achieve a goal. We will emphasize agents that can make near-optimal decisions in a timely manner with incomplete information and limited computational resources. The course will cover Markov decision processes, reinforcement learning, planning, and function approximation (online supervised learning). The course will take an information-processing approach to the concept of mind and briefly touch on perspectives from psychology, neuroscience, and philosophy.
@@ -49,7 +49,7 @@ The course will use Python 3. We will use elementary ideas of probability, calcu
 
 #### Course Prerequisites
 * CMPUT 175 or CMPUT 275<br>
-* CMPUT 267 or Stat 265 or CMPUT 466 or consent of the instructor (upper level ML course or non-applied statistics course).
+* CMPUT 267 or CMPUT 296 or Stat 265 or CMPUT 466 or consent of the instructor (upper level ML course or non-applied statistics course).
  
 ### Course Topics
 With a focus on AI as the design of agents learning from experience to predict and control their environment, topics will include
@@ -62,7 +62,7 @@ With a focus on AI as the design of agents learning from experience to predict a
 * Policy gradient methods
 
 ### Course Work and Evaluation
-The course work will come from the quizzes and assignments through the Coursera Platform. There will be one small programming assignment (notebook) or one multiple choice quiz due each week, through the Coursera Platform. There are also practice quizzes, that will be due before the start of each week for participation marks. Each week, you have to complete the quiz by midnight on Sunday, for the topic that coming week. That means you have to have completed watching the lecture videos on Coursera and readings as well for that week. The course will also have two mini-essays (1/2 page writing assignments), a quiz, midterm exam, given in class, and a final exam at the end. 
+The course work will come from the quizzes and assignments through the Coursera Platform. There will be one small programming assignment (notebook) or one multiple choice quiz due each week, through the Coursera Platform. There are also practice quizzes, that will be due before the start of each week for participation marks. Each week, you have to complete the quiz by midnight on Sunday, for the topic that coming week. That means you have to have completed watching the lecture videos on Coursera and readings as well for that week. The course will also have two mini-essays (1/2 page writing assignments), midterm exam, given in class, and a final exam at the end. 
 
 For weekly practice quizzes, each one has a weight of 0.5% . There are a total of 12 weekly pratice quizzes, and you should do all of them. But, due to the fact that issues sometimes arise, we give you a couple of mulligans. You have to complete 10 of the 12 to get the full 5% participation mark. 
 
@@ -71,12 +71,11 @@ There are 11 graded assignments. They are usually python notebooks, but sometime
 The mini essays will be writing assignments. You will be given a list of 10 or so discussion topics (no other topics are allowed) and you will need to write 200 to 300 words discussing the topic. Writing is an important skill. You will be marked both on your clarity of thought (and content), as well as your grammar, spelling, sentence & paragraph structure, and overall polish. Each mini-essay will we worth 2.5% of your final grade.
 
 * Assignments (graded on Coursera): 30%
-* Project: 5%
-* Quiz: 5%
-* Mini essay (x2): %5
-* Participation: 5%
+* Project: 6%
+* Mini essay (x2): %6
+* Participation: 6%
 * Midterm Exam: 20%
-* Final Exam: 30%
+* Final Exam: 32%
  
 ### Course Materials
 All course reading material will be available online. 
