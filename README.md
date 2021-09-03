@@ -25,7 +25,7 @@ Tian Tian<br>
 Yongchang Hao<br>
 
 ### Office Hours:
-Adam: Wednesday directly after class (in 307 Athabasca Hall)
+Adam: Wednesday directly after class (in 307 Athabasca Hall)<br>
 TAs will hold a 2hr office hour slot every week
 Andrew: TBA<br>
 Subhojeet: TBA<br>
