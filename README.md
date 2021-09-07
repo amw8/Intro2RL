@@ -28,7 +28,7 @@ Yongchang Hao<br>
 Adam: Wednesday directly after class (in 307 Athabasca Hall)<br>
 TAs will hold a 2hr office hour slot every week<br>
 Andrew: TBA<br>
-Subhojeet: TBA<br>
+Subhojeet: Thursday 3:00PM to 4:00PM on Google Meet (https://meet.google.com/cvh-nywc-gdt)
 Yongchang: TBA<br>
 Tian: Friday 2:00 PM to 3:00 PM on google meet (https://meet.google.com/qks-fzpp-ftn)
 
