@@ -26,11 +26,11 @@ Yongchang Hao<br>
 
 ### Office Hours:
 Adam: Wednesday directly after class (in 307 Athabasca Hall)<br>
-TAs will hold a 2hr office hour slot every week
+TAs will hold a 2hr office hour slot every week<br>
 Andrew: TBA<br>
-Subhojeet: TBA<br>
-Tian: TBA<br>
-Yongchang: TBA<br>
+Subhojeet: Thursday 3:00PM to 4:00PM on Google Meet (https://meet.google.com/cvh-nywc-gdt)<br>
+Yongchang: Tuesday 2:00 PM to 3:00 PM. In-person location TBA. [Google Meet link](https://meet.google.com/spp-ffer-dmb)<br>
+Tian: Friday 2:00 PM to 3:00 PM on google meet (https://meet.google.com/qks-fzpp-ftn)
 
 ### TA Email Address:
 cmput365@ualberta.ca
