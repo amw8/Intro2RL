@@ -1,4 +1,4 @@
-<h3><a href="https:/amw8.github.io/Intro2RL">Link back to the Syllabus</a></h3>
+<h3><a href="https://amw8.github.io/Intro2RL">Link back to the Syllabus</a></h3>
 
 <a href="http://incompleteideas.net/book/the-book-2nd.html">All readings are from the textbook.</a>
 These readings are designed to be short, so that it should be easy to keep up with the readings.
