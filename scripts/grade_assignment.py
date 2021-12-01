@@ -8,13 +8,13 @@ TAs = ['Andrew Patterson', 'Tian Tian', 'Adam White', 'Subhojeet Pramanik', 'Yon
 
 # what is the name of the assignment?
 # needs to *exactly* match the name in the coursera csv
-ASSIGNMENT = 'Graded Quiz'
+ASSIGNMENT = 'Policy Evaluation with Temporal Difference Learning'
 DUE_DATE = datetime(
     year=2021,
     month=10,
-    day=8,
-    hour=13,
-    minute=0,
+    day=15,
+    hour=23,
+    minute=59,
     tzinfo=pytz.timezone('Canada/Mountain'),
 )
 
@@ -36,6 +36,7 @@ got_names = list(coursera_table['Full Name'])
 
 grades = []
 
+late_submissions = 0
 for _, student in eclass_table.iterrows():
     name = student['First name'] + ' ' + student['Surname']
     email = student['Email address']
@@ -80,6 +81,7 @@ for _, student in eclass_table.iterrows():
 
     if len(submissions) == 0 and total_submissions > 0:
         print(f'All submissions for {name} were late')
+        late_submissions += 1
         grades.append((name, ccid, email, 0))
         continue
 
@@ -125,3 +127,4 @@ lo = np.min(grades['grade'])
 print('-------------------------------------------')
 print('Assignment statistics:')
 print(f'min: {lo}  mean: {avg}  std: {std}')
+print(f'Num late: {late_submissions}')
