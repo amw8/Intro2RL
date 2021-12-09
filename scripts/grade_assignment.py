@@ -13,8 +13,8 @@ DUE_DATE = datetime(
     year=2021,
     month=10,
     day=8,
-    hour=12,
-    minute=30,
+    hour=13,
+    minute=0,
     tzinfo=pytz.timezone('Canada/Mountain'),
 )
 
