@@ -32,7 +32,7 @@ for _, student in eclass_table.iterrows():
 students = pd.DataFrame(students, columns=['Name', 'Email', 'Correct Name', 'Correct Email'])
 
 no_registration = students[~students['Correct Name'] & ~students['Correct Email']]
-print('I was unable to find these students for course 1:')
+print('I was unable to find these students:')
 print(no_registration)
 
 print('Email addresses:')

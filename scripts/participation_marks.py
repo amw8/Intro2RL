@@ -39,7 +39,7 @@ ASSIGNMENTS = [
 
 if len(sys.argv) < 3:
     print('Call using:')
-    print('python3 scripts/check_registration.py <eclass_participant.csv> <coursera_gradebook.csv ...>')
+    print('python3 scripts/participant_marks.py <eclass_participant.csv> <coursera_gradebook.csv ...>')
     exit(1)
 
 eclass_table = pd.read_csv(sys.argv[1])
